@@ -1,4 +1,4 @@
-# Project Proposal: [Title]
+# Project Proposal: Modelling Garbage Patches in the North Atlantic 
 
 **Group:** Group Wombat
 

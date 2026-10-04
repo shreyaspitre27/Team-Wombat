@@ -4,13 +4,39 @@
 
 **Members:** Ayantika Jana, Shreyas Siddhartha Pitre, Caleb Khor, Jason Kwok, Kyle Lawther
 
+## Project Overview
+One of the most prevalent environmental issues for our oceans is plastic waste. Given the vast size of the ocean and its complex and interconnected system of currents, tracking and cleaning up plastic waste in the oceans is often more difficult than it seems.
+
+Locating ocean garbage patches is highly complex and deceptively difficult. While scientists know where the five major ocean gyres are (Mitchell & Shirah, 2014), finding the actual garbage inside them is not as simple as looking at a satellite photograph. Ocean behaviour is far from uniform: fast currents, swirling eddies and seasonal changes, all move water differently. Debris released close together can end up in very different places depending on which of these regions it enters. This inconsistency makes debris tracking unreliable with uniform assumptions, motivating approaches that utilize modelling regional ocean behaviour. 
+
+Through the use of drifter data, this study aims to classify the ocean into regions, based on currents, temperature and other features. Once these regions are identified, drifter movements will be used to model marine debris movement through these ocean regions. In combination, a better understanding of the features of each ocean region and a predictive model for where the debris moves will optimize its tracking and cleaning in the oceans.
+
 ## Research questions and objectives
 
+|     | Questions |
+| --- | --- |
+| Question 1 | Are drifters a good proxy for ocean rubbish?  |
+| Question 2 | Do ocean cells form clusters based on characteristics measured by drifters?  |
+| Question 3 | Can we forecast which ocean clusters drifters end up in? | 
+
+|     | Objectives |
+| --- | --- |
+| Objective 1 | Classify the ocean cells in the North Atlantic into distinct regions based on their features, providing local researchers, authorities and organisations a better understanding of the ocean |
+| Objective 2 | Create visualisations for where plastic waste forecast based upon aforementioned regions to provide Canary Island authorities and organisations with the best information on where cleanup is needed  |
 
 ## Data/region and data description
 
 
 ## Why that problem is important/significant
+The vast majority of the ocean's floating debris, including ghost nets, lines, crates, hard plastic bottles, and large debris, is made of low-density polymers. These stay concentrated in the top few meters of the water column and often get broken down into tiny microplastics by the forces of sun and waves.
+
+**Harm to Marine Life:** Entanglement and physical injury to surface-dwelling marine megafauna occur overwhelmingly in this top layer. Animals like fish, sea turtles, and seabirds mistake the tiny plastic pieces for food or become trapped in abandoned fishing nets
+
+**Food Chain Contamination:** Toxins from degraded plastics enter small organisms, moving up the food chain through a process called biomagnification
+
+**Hard to detect and clean:** Because the debris spans vast, remote areas and mostly consists of microscopic particles suspended deep in the water column, it is very difficult and expensive to track and remove. Submerged debris at this shallow depth is a severe hazard to human activity. 
+
+**High Cost in Damage:** Several sectors are affected and this contributes to significantly high cost of damage. The APEC estimate of damage from marine debris to fisheries, aquaculture, marine transport, shipbuilding and marine tourism industries is US$11.2 billion as of 2015 and will reach US$216 billion in 2050 (APEC, 2023).
 
 
 ## Intro/background and existing studies/solutions
@@ -24,4 +50,9 @@
 
 ## Timeline and plan
 
+## References
+1. Lee, D.-K., & Maximenko, N. (2025). Surface drifters and Ocean Dynamics: A review of technological advancements and scientific contributions. Ocean Science Journal, 60(2). https://doi.org/10.1007/s12601-025-00217-x
+2. Nikolai, M., Hafner, J., & Niiler, P. (2012). Pathways of marine debris derived from trajectories of Lagrangian drifters. At-Sea Detection of Derelict Fishing Gear, 65(1), 51–62. https://doi.org/10.1016/j.marpolbul.2011.04.016
+3. Shirah, G., & Mitchell, H. (2015, August 10). Garbage patch visualization experiment. NASA Scientific Visualization Studio. https://svs.gsfc.nasa.gov/4174
+4. van Sebille, E., England, M. H., & Froyland, G. (2012). Origin, dynamics and evolution of ocean garbage patches from observed surface drifters. Environmental Research Letters, 7(4), 044040. https://doi.org/10.1088/1748-9326/7/4/044040
 

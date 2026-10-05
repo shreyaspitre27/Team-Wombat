@@ -25,7 +25,17 @@ Through the use of drifter data, this study aims to classify the ocean into regi
 | Objective 2 | Create visualisations for where plastic waste forecast based upon aforementioned regions to provide Canary Island authorities and organisations with the best information on where cleanup is needed  |
 
 ## Data/region and data description
+**Dataset:** GDP 6-hour Drifter (clouddrift.datasets.gdp6h())
+**Region:** North Atlantic Ocean from 10°N 80°W to 45°N 20°W
+**Time Period:** 1990-2022
+**Key Variables:** Latitude, Longitude, Eastward Velocity, Northbound Velocity, Temperature
 
+|   Data Summary  |     |
+| --- | --- |
+|  Total observations (Complete Observations)   | 6,124,120 (5,719,745) |
+| Number of Drifters | 3,899  |
+| Number of Ocean Cells | 194,571 |
+| Cell Size   | 0.1° x 0.1° (approximate 11 x 11 km) | 
 
 ## Why that problem is important/significant
 The vast majority of the ocean's floating debris, including ghost nets, lines, crates, hard plastic bottles, and large debris, is made of low-density polymers. These stay concentrated in the top few meters of the water column and often get broken down into tiny microplastics by the forces of sun and waves.
@@ -49,7 +59,14 @@ The vast majority of the ocean's floating debris, including ghost nets, lines, c
 
 
 ## Timeline and plan
-
+|   Weeks | Phase | Output |
+| --- | --- | --- |
+|  1-2   | Crafting Research Questions / Project Planning / Understanding Dataset / Researching Existing Projects | Research question to work on  |
+| 3-4 | Data Manipulation / Initial Visualisations / Ocean Cell Classification / Proposal & Poster Development / Refining Project Scope & Objectives / Researching Existing Projects | Project Proposal including research questions, visualisation etc. |
+| 5-6 | Further improve ocean cell classification through further feature engineering / Begin research, understanding and developing Markov Chain for forecasting| Project Poster | 
+| 7-8  | Finalise ocean regions  | Final algorithm used to classify ocean cells |
+| 9-10  | Testing algorithm on various regions / Evaluate efficiency / Presentation of results | Final models for plastic waste forecasting / Project Presentation |
+| 11-12 | Finalize Research into a report | Final Report | 
 ## References
 1. Lee, D.-K., & Maximenko, N. (2025). Surface drifters and Ocean Dynamics: A review of technological advancements and scientific contributions. Ocean Science Journal, 60(2). https://doi.org/10.1007/s12601-025-00217-x
 2. Nikolai, M., Hafner, J., & Niiler, P. (2012). Pathways of marine debris derived from trajectories of Lagrangian drifters. At-Sea Detection of Derelict Fishing Gear, 65(1), 51–62. https://doi.org/10.1016/j.marpolbul.2011.04.016

@@ -22,7 +22,7 @@ Through the use of drifter data, this study aims to classify the ocean into regi
 |     | Objectives |
 | --- | --- |
 | Objective 1 | Classify the ocean cells in the North Atlantic into distinct regions based on their features, providing local researchers, authorities and organisations a better understanding of the ocean |
-| Objective 2 | Create visualisations for where plastic waste forecast based upon aforementioned regions to provide Canary Island authorities and organisations with the best information on where cleanup is needed  |
+| Objective 2 | Create visualisations for where plastic waste forecast based upon aforementioned regions to provide authorities and organisations with the best information on where cleanup is needed  |
 
 ## Data/region and data description
 **Dataset:** GDP 6-hour Drifter (clouddrift.datasets.gdp6h())

@@ -67,6 +67,11 @@ The vast majority of the ocean's floating debris, including ghost nets, lines, c
 | 7-8  | Finalise ocean regions  | Final algorithm used to classify ocean cells |
 | 9-10  | Testing algorithm on various regions / Evaluate efficiency / Presentation of results | Final models for plastic waste forecasting / Project Presentation |
 | 11-12 | Finalize Research into a report | Final Report | 
+## Scope and limitation
+1. Since data about the ocean will be collected from drifters, not all cells are guaranteed to have drifter data, especially after filtering for incomplete data. It may be substituted with other data, such as meteorological data, but finding a proper format and combining it with the drifter data may be technically challenging.
+2. Due to computation limitations, the six hourly dataset was used instead of a higher frequency. This study relies on this aggregated dataset to be a good approximation of ocean conditions at the measured time.
+3. A key assumption of this project and its usefulness is that drifters are a good proxy for plastic waste. Whilst drifters have been used as a proxy for plastic waste in previous studies, they establish that not all plastic waste behaves the same and that drouged and undrouged drifters are more useful for modelling different types of plastics (England et al, 2012). 
+
 ## References
 1. Lee, D.-K., & Maximenko, N. (2025). Surface drifters and Ocean Dynamics: A review of technological advancements and scientific contributions. Ocean Science Journal, 60(2). https://doi.org/10.1007/s12601-025-00217-x
 2. Nikolai, M., Hafner, J., & Niiler, P. (2012). Pathways of marine debris derived from trajectories of Lagrangian drifters. At-Sea Detection of Derelict Fishing Gear, 65(1), 51–62. https://doi.org/10.1016/j.marpolbul.2011.04.016

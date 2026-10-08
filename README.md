@@ -1,15 +1,16 @@
-# Project Proposal: Modelling Waste Movement in the North Atlantic 
+# Project Proposal: Modelling Waste Movement and Ocean Behaviour
 
-**Group:** Group Wombat
+**Group Wombat** 
 
 **Members:** Ayantika Jana, Shreyas Siddhartha Pitre, Caleb Khor, Jason Kwok, Kyle Lawther
 
 ## Project Overview
-One of the most prevalent environmental issues for our oceans is plastic waste. Given the vast size of the ocean and its complex and interconnected system of currents, tracking and cleaning up plastic waste in the oceans is often more difficult than it seems.
+One of the most prevalent environmental issues for our oceans is marine waste. Given the vast size of the ocean and its complex and interconnected system of currents, tracking and cleaning up waste in the oceans is often more difficult than it appears.
 
-Locating ocean garbage patches is highly complex and deceptively difficult. While scientists know where the five major ocean gyres are (Mitchell & Shirah, 2014), finding the actual garbage inside them is not as simple as looking at a satellite photograph. Ocean behaviour is far from uniform: fast currents, swirling eddies and seasonal changes, all move water differently. Debris released close together can end up in very different places depending on which of these cluster it enters. This inconsistency makes debris tracking unreliable with uniform assumptions, motivating approaches that utilize modelling regional ocean behaviour. 
+Locating ocean garbage patches is highly complex and deceptively difficult. While scientists know where the five major ocean gyres are (Mitchell & Shirah, 2014), finding the actual garbage inside them is not as simple as looking at a satellite photograph. Ocean behaviour is far from uniform: fast currents, swirling eddies and seasonal changes, all move water differently. Debris released close together can end up in very different places depending on the ocean behaviour it encounters. This inconsistency makes debris tracking unreliable with uniform assumptions, motivating approaches that utilize modelling regional ocean behaviour. 
 
-Through the use of drifter data, this study aims to classify the ocean into regions, based on currents, temperature and other features. Once these regions are identified, drifter movements will be used to model marine debris movement through these ocean regions. In combination, a better understanding of the features of each ocean region and a predictive model for where the debris moves will optimize its tracking and cleaning in the oceans.
+For this study, the study area will be divided into cells. A transition matrix will be used to calculate the distribution of movements of drifters between cells. Then, through clustering the ocean cells based on current velocities, temperature and other features, ocean regions will be identified. In combination, a better understanding of the characteristics of each ocean region and a predictive model for where the debris ends up will optimize its tracking and cleaning in the oceans. 
+
 
 ## Research questions and objectives
 
@@ -24,11 +25,23 @@ Through the use of drifter data, this study aims to classify the ocean into regi
 | Objective 1 | Classify the ocean cells in the North Atlantic into distinct regions based on their features, providing local researchers, authorities and organisations a better understanding of the ocean |
 | Objective 2 | Create visualisations for where plastic waste forecast based upon aforementioned regions to provide authorities and organisations with the best information on where cleanup is needed  |
 
+## Background and Significance
+**Significance**
+
+The vast majority of the ocean's floating debris, including ghost nets, lines, crates, hard plastic bottles, and large debris, is made of low-density polymers. These stay concentrated in the top few meters of the water column and often get broken down into tiny microplastics by the forces of sun and waves, causing great harm to marine life due to confusion of garbage for food.
+Garbage patches in the ocean are large and filled with microplastics that are hard to track and remove, and thus can create high costs in damage, especially to marine architecture, where the expected costs in marine damages is expected to reach $434 billion globally between 2020 and 2050 if plastic production continues to grow (McIlgorm, 2022).
+
+**Past and Opportunities**
+
+There are studies that focus on the accumulation of garbage and prove the location of several garbage patches across the Earth’s surface, including the Great Pacific Garbage Patch, which is the largest accumulation of plastic in the world. This includes research of drifters and their ability to track garbage accumulation by also analysing ocean behaviour through the GDP data (Lee et al., 2025).
+Previous research into garbage accumulation mainly visualise the projection of garbage using current GDP data. We aim to create a final product that can predict where garbage will end up by extrapolating from the data, which is a prime opportunity for clear and certain paths to garbage patches for future clean up.
+
+
 ## Data/region and data description
-**Dataset:** GDP 6-hour Drifter (clouddrift.datasets.gdp6h())
-**Region:** North Atlantic Ocean from 10°N 80°W to 45°N 20°W
-**Time Period:** 1990-2022
-**Key Variables:** Latitude, Longitude, Eastward Velocity, Northbound Velocity, Temperature
+**Dataset:** GDP 6-hour Drifter (clouddrift.datasets.gdp6h()) <br>
+**Region:** North Atlantic Ocean from 10°N 80°W to 45°N 20°W <br>
+**Time Period:** 1990-2022 <br>
+**Key Variables:** Latitude, Longitude, Eastward Velocity, Northbound Velocity, Temperature <br>
 
 |   Data Summary  |     |
 | --- | --- |
@@ -37,26 +50,29 @@ Through the use of drifter data, this study aims to classify the ocean into regi
 | Number of Ocean Cells | 194,571 |
 | Cell Size   | 0.1° x 0.1° (approximate 11 x 11 km) | 
 
-## Why that problem is important/significant
-The vast majority of the ocean's floating debris, including ghost nets, lines, crates, hard plastic bottles, and large debris, is made of low-density polymers. These stay concentrated in the top few meters of the water column and often get broken down into tiny microplastics by the forces of sun and waves.
-
-**Harm to Marine Life:** Entanglement and physical injury to surface-dwelling marine megafauna occur overwhelmingly in this top layer. Animals like fish, sea turtles, and seabirds mistake the tiny plastic pieces for food or become trapped in abandoned fishing nets
-
-**Food Chain Contamination:** Toxins from degraded plastics enter small organisms, moving up the food chain through a process called biomagnification
-
-**Hard to detect and clean:** Because the debris spans vast, remote areas and mostly consists of microscopic particles suspended deep in the water column, it is very difficult and expensive to track and remove. Submerged debris at this shallow depth is a severe hazard to human activity. 
-
-**High Cost in Damage:** Several sectors are affected and this contributes to significantly high cost of damage. The APEC estimate of damage from marine debris to fisheries, aquaculture, marine transport, shipbuilding and marine tourism industries is US$11.2 billion as of 2015 and will reach US$216 billion in 2050 (APEC, 2023).
-
-
-## Intro/background and existing studies/solutions
-
-
-## Proposed method
-
+We wanted to look at a significant region in regards to economic and political significance, thus the Atlantic Ocean region felt important enough to analyse with regards to importance to marine life, shipping routes, and the overall large size of the ocean. The product we wanted to make would require a large amount of data in order to predict where a drifter may go over a period of time, thus we decided on a long time period of around 30 years in order to make a well informed model that could work with other R. 
 
 ## Initial analysis and visualization
 
+## Proposed Method
+|   |   |
+| --- | --- |
+| Data Cleaning | Filtering drifter data in relation to our R. Creating a new dataframe that includes only the variables that we are using, and analyzing the data. Dividing the ocean into grids for visual analysis and a basis for future drifter modelling |
+| Analysis/Model | Lagrangian/Eulerian models using the Markov Chain as a probabilistic model, to model drifter transitions and forecast its location |
+| Evaluation | Markov Property Test / Goodness of fit (RMSE) |
+| Final Product | A probabilistic model that allows users to input for any region of interest to determine the probability of where drifters would end up as a proxy to where garbage ends up, along with the cluster it ends up to ease clean up operations |
+
+
+## Expected Final Results 
+
+Using drifters as a proxy for marine debris, our research aims to predict the location where marine debris would end up at a given time through drifter movements. Along with this, since clean up methods differ based on ocean behaviour, we aim to classify the ocean into clusters based on physical characteristics, and subsequently predict which clusters the debris would end up to indicate the behaviour in those specific clusters which would also help determine the most safe and efficient way for cleaning operations.
+
+
+## Scope and limitation
+
+1. Since data about the ocean will be collected from drifters, not all cells are guaranteed to have drifter data, especially after filtering for incomplete data. It may be substituted with other data, such as meteorological data, but finding a proper format and combining it with the drifter data may be technically challenging.
+2. Due to computation limitations, the six hourly dataset was used instead of a higher frequency. This study relies on this aggregated dataset to be a good approximation of ocean conditions at the measured time.
+3. A key assumption of this project and its usefulness is that drifters are a good proxy for plastic waste. Whilst drifters have been used as a proxy for plastic waste in previous studies, they establish that not all plastic waste behaves the same and that drouged and undrouged drifters are more useful for modelling different types of plastics (England et al, 2012). 
 
 ## Timeline and plan
 |   Weeks | Phase | Output |
@@ -67,12 +83,9 @@ The vast majority of the ocean's floating debris, including ghost nets, lines, c
 | 7-8  | Finalise ocean regions  | Final algorithm used to classify ocean cells |
 | 9-10  | Testing algorithm on various regions / Evaluate efficiency / Presentation of results | Final models for plastic waste forecasting / Project Presentation |
 | 11-12 | Finalize Research into a report | Final Report | 
-## Scope and limitation
-1. Since data about the ocean will be collected from drifters, not all cells are guaranteed to have drifter data, especially after filtering for incomplete data. It may be substituted with other data, such as meteorological data, but finding a proper format and combining it with the drifter data may be technically challenging.
-2. Due to computation limitations, the six hourly dataset was used instead of a higher frequency. This study relies on this aggregated dataset to be a good approximation of ocean conditions at the measured time.
-3. A key assumption of this project and its usefulness is that drifters are a good proxy for plastic waste. Whilst drifters have been used as a proxy for plastic waste in previous studies, they establish that not all plastic waste behaves the same and that drouged and undrouged drifters are more useful for modelling different types of plastics (England et al, 2012). 
 
 ## References
+
 1. Lee, D.-K., & Maximenko, N. (2025). Surface drifters and Ocean Dynamics: A review of technological advancements and scientific contributions. Ocean Science Journal, 60(2). https://doi.org/10.1007/s12601-025-00217-x
 2. Nikolai, M., Hafner, J., & Niiler, P. (2012). Pathways of marine debris derived from trajectories of Lagrangian drifters. At-Sea Detection of Derelict Fishing Gear, 65(1), 51–62. https://doi.org/10.1016/j.marpolbul.2011.04.016
 3. Shirah, G., & Mitchell, H. (2015, August 10). Garbage patch visualization experiment. NASA Scientific Visualization Studio. https://svs.gsfc.nasa.gov/4174

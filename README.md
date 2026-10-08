@@ -37,7 +37,7 @@ There are studies that focus on the accumulation of garbage and prove the locati
 Previous research into garbage accumulation mainly visualise the projection of garbage using current GDP data. We aim to create a final product that can predict where garbage will end up by extrapolating from the data, which is a prime opportunity for clear and certain paths to garbage patches for future clean up.
 
 
-## Data/region and data description
+## Data & Region Description
 **Dataset:** GDP 6-hour Drifter (clouddrift.datasets.gdp6h()) <br>
 **Region:** North Atlantic Ocean from 10°N 80°W to 45°N 20°W <br>
 **Time Period:** 1990-2022 <br>

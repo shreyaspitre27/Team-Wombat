@@ -1,6 +1,6 @@
 # Project Proposal: Modelling Waste Movement and Ocean Behaviour in the North Atlantic
 
-**Group Wombat** 
+**Group Wombat**
 
 **Members:** Ayantika Jana, Shreyas Siddhartha Pitre, Caleb Khor, Jason Kwok, Kyle Lawther
 

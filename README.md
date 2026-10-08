@@ -56,9 +56,24 @@ We wanted to look at a significant region in regards to economic and political s
 
 We conducted an initial analysis of the dataset as a whole, and specific to our region as well. Since we are working with a time series dataset, it was important to understand the distribution of data over time intervals.
 
+<p align="center">
+  <img width="512" height="206" alt="initial" src="https://github.com/user-attachments/assets/81afafb7-6b34-435a-a21e-4bfca3f9bafd" />
+</p>
+
 **Velocity and Sea Surface Temperature** 
 
 To identify ocean clusters, we analyzed the distribution of velocities and SST over our region, and found a resultant maximum net speed of 0.54 m/s, along with the SST ranging from 12.85°C to 28.55°C
+
+<div align="center">
+  <table>
+    <tr>
+      <td> <img width="512" height="436" alt="velocity" src="https://github.com/user-attachments/assets/7b9e1a1d-e34e-49cb-9a1a-6acc146818cf" />
+ </td>
+      <td> <img width="512" height="433" alt="sst" src="https://github.com/user-attachments/assets/21443c7f-c3e2-4480-9552-ff4e6b9729d2" />
+ </td>
+    </tr>
+  </table>
+</div>
 
 In the velocity heat map on the left, the Gulf Stream stands out immediately off the North American coast. The Caribbean also has some faster moving waters. Whilst the central North Atlantic seems quiet, there are streaks of gradually moving currents throughout.
 As expected, sea surface temperature generally cools towards higher latitudes. Notable features include the Gulf Steam, which is warmer than its surrounding regions,and the sudden transition to cool waters, represented by dark blue, near New England and Atlantic Canada.The Caribbean is also warmer than other areas at the same latitudes.
@@ -67,7 +82,14 @@ As expected, sea surface temperature generally cools towards higher latitudes. N
 
 After running GMM clustering on sea surface temperature and ocean velocity, we identified five clusters having noisy boundaries, along with their profiles. Well known features like the Gulf Stream and the North Atlantic Drift easily stand out.
 
+<p align="center">
+  <img width="512" height="436" alt="clusters" src="https://github.com/user-attachments/assets/e4e4536b-ad4f-4d98-af78-c3316d2af207" />
+</p>
 
+<p align="center">
+  <img width="512" height="189" alt="profiles" src="https://github.com/user-attachments/assets/c79a8b29-e172-448e-bb05-374d9a026eee" />
+
+</p>
 
 ## Proposed Method
 |   |   |

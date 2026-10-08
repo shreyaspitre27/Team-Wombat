@@ -57,6 +57,7 @@ We wanted to look at a significant region in regards to economic and political s
 We conducted an initial analysis of the dataset as a whole, and specific to our region as well. Since we are working with a time series dataset, it was important to understand the distribution of data over time intervals.
 
 **Velocity and Sea Surface Temperature** 
+
 To identify ocean clusters, we analyzed the distribution of velocities and SST over our region, and found a resultant maximum net speed of 0.54 m/s, along with the SST ranging from 12.85°C to 28.55°C
 
 In the velocity heat map on the left, the Gulf Stream stands out immediately off the North American coast. The Caribbean also has some faster moving waters. Whilst the central North Atlantic seems quiet, there are streaks of gradually moving currents throughout.

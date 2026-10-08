@@ -1,4 +1,4 @@
-# Project Proposal: Modelling Waste Movement and Ocean Behaviour
+# Project Proposal: Modelling Waste Movement and Ocean Behaviour in the North Atlantic
 
 **Group Wombat** 
 
@@ -54,6 +54,20 @@ We wanted to look at a significant region in regards to economic and political s
 
 ## Initial analysis and visualization
 
+We conducted an initial analysis of the dataset as a whole, and specific to our region as well. Since we are working with a time series dataset, it was important to understand the distribution of data over time intervals.
+
+**Velocity and Sea Surface Temperature** 
+To identify ocean clusters, we analyzed the distribution of velocities and SST over our region, and found a resultant maximum net speed of 0.54 m/s, along with the SST ranging from 12.85°C to 28.55°C
+
+In the velocity heat map on the left, the Gulf Stream stands out immediately off the North American coast. The Caribbean also has some faster moving waters. Whilst the central North Atlantic seems quiet, there are streaks of gradually moving currents throughout.
+As expected, sea surface temperature generally cools towards higher latitudes. Notable features include the Gulf Steam, which is warmer than its surrounding regions,and the sudden transition to cool waters, represented by dark blue, near New England and Atlantic Canada.The Caribbean is also warmer than other areas at the same latitudes.
+
+**Ocean Clustering**
+
+After running GMM clustering on sea surface temperature and ocean velocity, we identified five clusters having noisy boundaries, along with their profiles. Well known features like the Gulf Stream and the North Atlantic Drift easily stand out.
+
+
+
 ## Proposed Method
 |   |   |
 | --- | --- |
@@ -78,9 +92,9 @@ Using drifters as a proxy for marine debris, our research aims to predict the lo
 |   Weeks | Phase | Output |
 | --- | --- | --- |
 |  1-2   | Crafting Research Questions / Project Planning / Understanding Dataset / Researching Existing Projects | Research question to work on  |
-| 3-4 | Data Manipulation / Initial Visualisations / Ocean Cell Classification / Proposal & Poster Development / Refining Project Scope & Objectives / Researching Existing Projects | Project Proposal including research questions, visualisation etc. |
-| 5-6 | Further improve ocean cell classification through further feature engineering / Begin research, understanding and developing Markov Chain for forecasting| Project Poster | 
-| 7-8  | Finalise ocean regions  | Final algorithm used to classify ocean cells |
+| 3-4 | Data Manipulation / Initial Visualisations / Proposal & Poster Development / Refining Project Scope & Objectives / Researching Existing Projects | Project Proposal including research questions, visualisation etc. |
+| 5-6 | Further improve ocean classification through further feature engineering / Begin research, understanding and developing model for forecasting | Project Poster | 
+| 7-8  | Finalise region grids / implementing Lagrangian/Eulerian models using the Markov Chain  | Final algorithm used to classify ocean cells |
 | 9-10  | Testing algorithm on various regions / Evaluate efficiency / Presentation of results | Final models for plastic waste forecasting / Project Presentation |
 | 11-12 | Finalize Research into a report | Final Report | 
 

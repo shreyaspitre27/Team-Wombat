@@ -10,8 +10,11 @@ One of the most prevalent environmental issues for our oceans is marine waste. G
 Locating ocean garbage patches is highly complex and deceptively difficult. While scientists know where the five major ocean gyres are (Mitchell & Shirah, 2014), finding the actual garbage inside them is not as simple as looking at a satellite photograph. Ocean behaviour is far from uniform: fast currents, swirling eddies and seasonal changes, all move water differently. Debris released close together can end up in very different places depending on the ocean behaviour it encounters. This inconsistency makes debris tracking unreliable with uniform assumptions, motivating approaches that utilize modelling regional ocean behaviour. 
 
 This study forecasts drifter positions, as a proxy for marine debris, in the North Atlantic (10°-45°N, 80°-20°W), and compares three forecasting models. 
+
 **Model 1** divides the region into 0.1° × 0.1° cells and represents drifter movement as Markov chain, with a single transition matrix estimated from observed 6-hour cell-to-cell movements. Forecasts are made by propagating this matrix forward in time. 
+
 **Model 2** extends this approach by estimating four seasonal transition matrices (Mar-May, Jun-Aug, Sep-Nov, Dec-Feb) to test whether accounting for seasonal changes in currents improves forecasts. 
+
 **Model 3** takes a different, regression-based approach: it predicts each drifter’s displacement over the forecast horizon directly from its current position and recent movement. All three models are trained and tested using 5-fold cross-validation by drifter and evaluated against a persistence baseline using Mean Absolute Error, Skill score and the Energy Score. 
 Together, they assess how well data-driven models can predict where debris ends up, to support more effective tracking and clean-up.
 

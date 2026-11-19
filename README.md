@@ -1,15 +1,16 @@
-# Project Proposal: Modelling Waste Movement and Ocean Behaviour in the North Atlantic
+# Modelling Marine Debris Movement and Ocean Behaviour in the North Atlantic
 
 **Group Wombat**
 
 **Members:** Ayantika Jana, Shreyas Siddhartha Pitre, Caleb Khor, Jason Kwok, Kyle Lawther
 
-## Project Overview
+## Abstract
 One of the most prevalent environmental issues for our oceans is marine waste. Given the vast size of the ocean and its complex and interconnected system of currents, tracking and cleaning up waste in the oceans is often more difficult than it appears.
 
 Locating ocean garbage patches is highly complex and deceptively difficult. While scientists know where the five major ocean gyres are (Mitchell & Shirah, 2014), finding the actual garbage inside them is not as simple as looking at a satellite photograph. Ocean behaviour is far from uniform: fast currents, swirling eddies and seasonal changes, all move water differently. Debris released close together can end up in very different places depending on the ocean behaviour it encounters. This inconsistency makes debris tracking unreliable with uniform assumptions, motivating approaches that utilize modelling regional ocean behaviour. 
 
-For this study, the study area will be divided into cells. A transition matrix will be used to calculate the distribution of movements of drifters between cells. Then, through clustering the ocean cells based on current velocities, temperature and other features, ocean regions will be identified. In combination, a better understanding of the characteristics of each ocean region and a predictive model for where the debris ends up will optimize its tracking and cleaning in the oceans. 
+This study forecasts drifter positions, as a proxy for marine debris, in the North Atlantic (10°–45°N, 80°–20°W), and compares three forecasting models. **Model 1** divides the region into 0.1° × 0.1° cells and represents drifter movement as Markov chain, with a single transition matrix estimated from observed 6-hour cell-to-cell movements. Forecasts are made by propagating this matrix forward in time. **Model 2** extends this approach by estimating four seasonal transition matrices (Mar–May, Jun–Aug, Sep–Nov, Dec–Feb) to test whether accounting for seasonal changes in currents improves forecasts. **Model 3** takes a different, regression-based approach: it predicts each drifter’s displacement over the forecast horizon directly from its current position and recent movement. All three models are trained and tested using 5-fold cross-validation by drifter and evaluated against a persistence baseline using Mean Absolute Error, Skill score and the Energy Score. Together, they assess how well data-driven models can predict where debris ends up, to support more effective tracking and clean-up.
+
 
 
 ## Research questions and objectives
@@ -18,12 +19,14 @@ For this study, the study area will be divided into cells. A transition matrix w
 | --- | --- |
 | Question 1 | Are drifters a good proxy for ocean rubbish?  |
 | Question 2 | Do ocean cells form clusters based on characteristics measured by drifters?  |
-| Question 3 | Can we forecast which ocean clusters drifters end up in? | 
+| Question 3 | If drifters proxy marine debris, can we forecast the location they end up in? | 
 
 |     | Objectives |
 | --- | --- |
 | Objective 1 | Classify the ocean cells in the North Atlantic into distinct regions based on their features, providing local researchers, authorities and organisations a better understanding of the ocean |
-| Objective 2 | Create visualisations for where plastic waste forecast based upon aforementioned regions to provide authorities and organisations with the best information on where cleanup is needed  |
+| Objective 2 | Create visualisations of marine debris forecast to provide authorities and organisations with the best information on where cleanup is needed  |
+| Objective 3 | Evaluate whether seasonality affects forecasting behaviour |
+| Objective 4 | |
 
 ## Background and Significance
 **Significance**
@@ -110,16 +113,6 @@ Using drifters as a proxy for marine debris, our research aims to predict the lo
 1. Since data about the ocean will be collected from drifters, not all cells are guaranteed to have drifter data, especially after filtering for incomplete data. It may be substituted with other data, such as meteorological data, but finding a proper format and combining it with the drifter data may be technically challenging.
 2. Due to computation limitations, the six hourly dataset was used instead of a higher frequency. This study relies on this aggregated dataset to be a good approximation of ocean conditions at the measured time.
 3. A key assumption of this project and its usefulness is that drifters are a good proxy for plastic waste. Whilst drifters have been used as a proxy for plastic waste in previous studies, they establish that not all plastic waste behaves the same and that drouged and undrouged drifters are more useful for modelling different types of plastics (England et al, 2012). 
-
-## Timeline and plan
-|   Weeks | Phase | Output |
-| --- | --- | --- |
-|  1-2   | Crafting Research Questions / Project Planning / Understanding Dataset / Researching Existing Projects | Research question to work on  |
-| 3-4 | Data Manipulation / Initial Visualisations / Proposal & Poster Development / Refining Project Scope & Objectives / Researching Existing Projects | Project Proposal including research questions, visualisation etc. |
-| 5-6 | Further improve ocean classification through further feature engineering / Begin research, understanding and developing model for forecasting | Project Poster | 
-| 7-8  | Finalise region grids / implementing Lagrangian/Eulerian models using the Markov Chain  | Final algorithm used to classify ocean cells |
-| 9-10  | Testing algorithm on various regions / Evaluate efficiency / Presentation of results | Final models for plastic waste forecasting / Project Presentation |
-| 11-12 | Finalize Research into a report | Final Report | 
 
 ## References
 

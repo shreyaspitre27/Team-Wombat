@@ -150,7 +150,7 @@ Mapping and profiling these clusters clearly highlighted major oceanographic fea
 <br>
 
 <p align = "center">
-<img width="700" height="600" alt="clusters" src="https://github.com/user-attachments/assets/1fcbb3b0-0b8c-47a8-a73e-a8204b888b76" />
+<img width="512" height="400" alt="clusters" src="https://github.com/user-attachments/assets/1fcbb3b0-0b8c-47a8-a73e-a8204b888b76" />
   </p>
   
 <div align="center">
@@ -172,7 +172,7 @@ With the ocean basin reliably segmented into distinct regimes, we next applied a
 
 <p align = "center"> <b>Initial first-order Markov Chain </b></p>
 <p align = "center">
-  <img width="700" height="600" alt="initial_markov" src="https://github.com/user-attachments/assets/b0571771-33ca-49d5-a82b-8a1ddc277956" />
+  <img width="512" height="400" alt="initial_markov" src="https://github.com/user-attachments/assets/b0571771-33ca-49d5-a82b-8a1ddc277956" />
 </p>
 
 However, the results were largely inconclusive for two main reasons: <br>

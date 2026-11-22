@@ -242,8 +242,7 @@ $$
 \Delta y = \beta_{0,y} + \beta_{1,y} lat + \beta_{2,y} lon + \beta_{3,y} \Delta x_{lag1} + \beta_{4,y} \Delta y_{lag1} + \varepsilon_y
 $$
 
-<br>
-Lat and lon are the drifter’s current positions, and $\Delta x_{lag1}$ and $\Delta y_{lag1}$ are its east and north displacements over the previous 6 hours, capturing short term momentum. The errors are modelled as a bivariate normal distribution.
+Lat and lon are the drifter’s current positions, and $\Delta x_{\text{lag1}}$ and $\Delta y_{\text{lag1}}$ are its east and north displacements over the previous 6 hours, capturing short term momentum. The errors are modelled as a bivariate normal distribution.
 
 ### 8.1. Persistence as a Baseline
 

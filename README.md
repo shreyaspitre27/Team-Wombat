@@ -51,16 +51,15 @@ Previous studies on marine debris accumulation have identified major oceanic gar
 
 Maximenko’s analysis into drifter movement shows that the “...probability for a drifter to travel between two locations depends only on the duration of the travel but does not depend on the selection of the start time moment” (Maximeko et al., 2012). This characteristic of drifters satisfies the Markov memoryless property, where the movement of a drifter is independent of its previous location. This provides for the possibility to conduct a probabilistic Markov approach for prediction of drifter movement.
 
-Previous research into garbage accumulation mainly visualise the projection of garbage using current GDP data, and project marine debris movement over a longer time period. 
-
-We aim to create a final product that can predict where garbage will end up in the short-term horizon by extrapolating from the data, which creates an opportunity for a more accurate, targeted cleanup. 
+Past studies have also shown a link between seasonality and drifter behaviour. A notable paper was able to divide the year into clusters based on the seasons/SST changes and drifter behaviour (Rodríguez-Méndez et al., 2026). This allows for the opportunity to look into the differences in drifter movement depending on the season.
 
 <p align="center">
   <img width="512" height="275" alt="season" src="https://github.com/user-attachments/assets/3ba9ad16-229a-4cbc-9af1-4c911915dd68" />
 </p>
 
-Previous research into garbage accumulation mainly visualise the projection of garbage using current GDP data, and project marine debris movement over a longer time period. We aim to create a final product that can predict where garbage will end up by extrapolating from the data, which is a prime opportunity for clear and certain paths to garbage patches for future clean up. We also wish to forecast in the short term, aiming to forecast up to 30 days into the future.
+Previous research into garbage accumulation mainly visualise the projection of garbage using current GDP data, and project marine debris movement over a longer time period. 
 
+We aim to create a final product that can predict where garbage will end up in the short-term horizon by extrapolating from the data, which creates an opportunity for a more accurate, targeted cleanup. 
 
 
 ## 5. Data & Region description
@@ -74,9 +73,11 @@ Previous research into garbage accumulation mainly visualise the projection of g
 |  Total observations (Complete Observations)   | 6,116,067 (5,712,403) |
 | Number of Drifters | 3,896  |
 | Number of Ocean Cells | 194,571 |
-| Cell Size   | 0.1° x 0.1° (approximate 11 x 11 km at Equator) | 
+| Cell Size   | 0.1° x 0.1° (approximately 11 x 11 km at Equator) | 
 
-The North Atlantic Ocean was selected as our study region due to its vast geographic scale, rich marine biodiversity, high concentration of major shipping lanes, and substantial economic and geopolitical significance. Since accurately predicting drifter movements over extended horizons requires a high volume of observational data, a 30-year study period was selected.
+The North Atlantic Ocean was selected as our study region due to its vast geographic scale, rich marine biodiversity, high concentration of major shipping lanes, and substantial economic and geopolitical significance. 
+
+Since accurately predicting drifter movements over extended horizons requires a high volume of observational data, a 30-year study period was selected.
 
 ## 6. Data Setup and Technical Instructions
 
@@ -86,7 +87,7 @@ The first cell of every notebook installs the package the study needs: <br>
 Install Python version **3.10** or later and install **Juptyer** with `pip install notebook`. <br>
 `!pip install -q "zarr<3" "xarray==2025.1.2" clouddrift` <br>
 `!pip install -q cartopy` <br>
-  a. `CloudDrift` gives direct access to the Global Drifter Program. Its `gdp6h()` downloads the 6-hourly drifter dataset the first    time it is called <br>
+  a. `CloudDrift` gives direct access to the Global Drifter Program. Its `gdp6h()` downloads the 6-hourly drifter dataset the first time it is called <br>
   b. `xarray` handles the dataset returned. It is pinned to version 2025.1.2 to ensure compatibility and uniformity across every model <br>
   c. `zarr` is the storage format the dataset is read from <br>
   d. `Cartopy` draws the geographic maps used in the models <br>
@@ -107,7 +108,8 @@ Additional libraries imported in the model are as follows:
 ## 7. Initial analysis and visualization (`Initial_Analysis.ipynb`)
 ### 7.1 Drifters as a Marine Debris proxy
 
-Prior research validated using Global Drifter Program (GDP) trajectories as a proxy for floating marine debris. For instance, NASA’s Scientific Visualisation Studio, 2015 uses GDP drifter data to model surface garbage accumulation, while UNSW researchers (van Sebille et al., 2012) used drifter data to track macro-scale marine debris dispersion. Following van Sebille et al., we decided to use both drogued and undrogued drifters: drogued drifters follow the sub-surface currents closely while undrogued ones experience wind effects, together capturing the variety of buoyancy and drag profiles of real ocean debris while also maximising sample size.
+Prior research validated using Global Drifter Program (GDP) trajectories as a proxy for floating marine debris. For instance, NASA’s Scientific Visualisation Studio, 2015 uses GDP drifter data to model surface garbage accumulation, while UNSW researchers (van Sebille et al., 2012) used drifter data to track macro-scale marine debris dispersion. 
+Following van Sebille et al., we decided to use both drogued and undrogued drifters: drogued drifters follow the sub-surface currents closely while undrogued ones experience wind effects, together capturing the variety of buoyancy and drag profiles of real ocean debris while also maximising sample size.
 
 ### 7.2 Summary of Data
 Building on this approach, we conducted an initial exploratory analysis of the **gdp6h** dataset at both the global level and within our target region.
@@ -118,7 +120,7 @@ Building on this approach, we conducted an initial exploratory analysis of the *
 
 ### 7.3 Velocity and Sea Surface Temperature
 
-For each 0.1° × 0.1° cell, the $mean_{ve}$, $mean_{vn}$, and $mean_{sst}$ were calculated and then, visualizations below were made to analyze our region in more detail. It was found to have a resultant maximum net speed of **0.54 m/s**, along with the SST ranging from **12.85°C** to **28.55°C**.
+For each 0.1° × 0.1° cell, the $mean_{ve}$, $mean_{vn}$, and $mean_{sst}$ were calculated and then, visualizations below were made to analyze our region in more detail. It was found that our region has a resultant maximum net speed of **0.54 m/s**, along with the SST ranging from **12.85°C** to **28.55°C**.
 
 <div align="center">
   <table>
@@ -132,11 +134,13 @@ For each 0.1° × 0.1° cell, the $mean_{ve}$, $mean_{vn}$, and $mean_{sst}$ wer
 </div>
 
 In the velocity heat map on the left, the Gulf Stream stands out immediately off the North American coast. The Caribbean also has some faster moving waters. Whilst the central North Atlantic seems quiet, there are streaks of gradually moving currents throughout.
-As expected, sea surface temperature generally cools towards higher latitudes. Notable features include the Gulf Steam, which is warmer than its surrounding regions,and the sudden transition to cool waters, represented by dark blue, near New England and Atlantic Canada.The Caribbean is also warmer than other areas at the same latitudes.
+
+On the right, sea surface temperature generally cools towards higher latitudes. Notable features include the Gulf Steam, which is warmer than its surrounding regions,and the sudden transition to cool waters, represented by dark blue, near New England and Atlantic Canada. The Caribbean is also warmer than other areas at the same latitudes.
 
 ### 7.4 Ocean Clustering
 
 To answer our first objective, an unsupervised machine learning model was used to classify our region, the North Atlantic Basin, into distinct ocean clusters. A **Gaussian Mixture Model** (GMM) was applied to the valid spatial grid cells.
+
 GMM was chosen over simpler distance-based clustering methods (such as K-Means) because representing the data as a combination of overlapping multi-dimensional normal (Gaussian) distributions would allow the model to capture the natural, irregularly shaped patterns typical of ocean current and temperature fronts.
 
 The clustering workflow consisted of three core stages:<br>
@@ -145,7 +149,6 @@ Equal weights of 1.0 were applied before using them so that flow and temperature
   - **Hyperparameter Tuning and  Automated Model Selection using BIC:** Candidate cluster counts (k $\in$ [2,3,4,5,6,7,8,10,12]) were tested using full covariance matrices so clusters could take elliptical shapes. <br>
 Using the Bayesian Information Criterion (BIC), *k=4*  was automatically selected  -  adding another cluster yielded less than 1% relative gain in BIC. <br>
   - **Cluster Assignment and Profiling:** Finally, the GMM was refitted using 4 clusters, assigning each grid cell to its most probable regime, along with a probabilistic confidence score. <br>
-  <br>
 Mapping and profiling these clusters clearly highlighted major oceanographic features, including the Sargasso Sea, North Equatorial Current, Gulf Stream, and North Atlantic Current. <br>
 <br>
 
@@ -166,7 +169,8 @@ Mapping and profiling these clusters clearly highlighted major oceanographic fea
 
 </div>
 
-Across all four identified regimes, the mean assignment confidence remained consistently high (> 80%), indicating well-separated, statistically reliable cluster boundaries. <br>
+Across all four identified regimes, the mean assignment confidence remained consistently high (> 80%), indicating well-separated, statistically reliable cluster boundaries. 
+
 With the ocean basin reliably segmented into distinct regimes, we next applied a first-order Markov Chain transition matrix to the 6-hourly drifter trajectories to capture a macro-level picture of marine debris movement between regimes. <br>
 <br>
 
@@ -203,7 +207,7 @@ state = row \times N_{lon} + col
 $$
 <br>
 
-Giving a total of 350 x 600 = **210,000** states. <br>
+giving a total of 350 x 600 = **210,000** states. <br>
 <br>
 Subsequently, the central coordinates of the corresponding grid are mapped using the following formulas: <br>
 <br>
@@ -228,6 +232,7 @@ $$
 
 `P` is stored as a sparse **210,000 x 210,000** matrix. To forecast `n_steps` ahead (`n_steps` x 6 hrs), an initial distribution $\pi^{(0)}$ concentrated on the start cell is propagated as $\pi^{(n)} = \pi^{(0)} P^n$.<br>
 The point forecast is the most probable end cell. A probabilistic forecast is also produced by Monte-Carlo simulation of multiple simulated drifters taking random walks, forming a cloud of possible end positions.<br>
+
 Model 2 follows the same procedure as Model 1 but estimates four matrices, one for each season: Mar-May, Jun-Aug, Sep-Nov, Dec-Feb. Each matrix is built only from training transitions whose starting falls in season `q`. Test windows that lie entirely within a single season are forecast using that season’s matrix. Model 2 therefore tests whether including seasonality affects results.
 
 **Linear Regressiom**

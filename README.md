@@ -283,9 +283,52 @@ A positive skill score indicates that the model outperforms persistence, and a n
 
 ## Model 1 (`Model_1.ipynb`)
 
+
+| Fold | Horizon_Days | Markov_MAE_km | Persistence_MAE_km | Skill_vs_Persistence_% |
+| :---: | :---: | :---: | :---: | :---: |
+| 1 | 3.0 | 50.66 | 51.87 | +2.3% |
+| 1 | 10.0 | 125.57 | 133.05 | +5.6% |
+| 1 | 15.0 | 165.35 | 176.98 | +6.6% |
+| 2 | 3.0 | 48.87 | 49.53 | +1.3% |
+| 2 | 10.0 | 121.82 | 127.63 | +4.6% |
+| 2 | 15.0 | 160.69 | 170.05 | +5.5% |
+| 3 | 3.0 | 48.86 | 49.77 | +1.8% |
+| 3 | 10.0 | 121.83 | 128.52 | +5.2% |
+| 3 | 15.0 | 160.93 | 171.72 | +6.3% |
+| 4 | 3.0 | 49.22 | 50.33 | +2.2% |
+| 4 | 10.0 | 122.59 | 130.30 | +5.9% |
+| 4 | 15.0 | 161.92 | 174.32 | +7.1% |
+| 5 | 3.0 | 50.17 | 51.19 | +2.0% |
+| 5 | 10.0 | 125.17 | 132.28 | +5.4% |
+| 5 | 15.0 | 165.61 | 176.85 | +6.4% |
+
+
+| | Horizon_Days | Markov_MAE_km | Persistence_MAE_km | Skill_vs_Persistence_% |
+| :---: | :---: | :---: | :---: | :---: |
+| 1 | 3.0 | 49.5554 | 50.5406 | +1.944% |
+| 2 | 10.0 | 123.3979 | 130.3572 | +5.334% |
+| 3 | 15.0 | 162.9018 | 173.9837 | +6.364% |
+
+
+| | Horizon_Days | Markov_MAE_km | Persistence_MAE_km | Skill_vs_Persistence_% |
+| :---: | :---: | :---: | :---: | :---: |
+| 1 | 3.0 | 49.2239 | 50.3306 | +2.199% |
+| 2 | 10.0 | 122.5912 | 130.3039 | +5.919% |
+| 3 | 14.0 | 154.5232 | 166.0518 | +6.943% |
+| 4 | 15.0 | 161.9244 | 174.3233 | +7.113% |
+| 5 | 30.0 | 255.2866 | 280.3197 | +8.930% |
+
+
 <p align = "center">
 <img width="1788" height="662" alt="m1-1" src="https://github.com/user-attachments/assets/706acc3e-b86c-4ae9-a7c9-08ef509541d8" />
 </p>
+
+| Fold | Forecast_Days | Mean_Energy_Score_Model | Mean_Energy_Score_Persistence | Skill_vs_Persistence_% |
+| :---: | :---: | :---: | :---: | :---: |
+| 4 | 3.0 | 36.2973 | 48.9699 | +25.878% |
+| 4 | 10.0 | 100.8931 | 135.8450 | +25.729% |
+| 4 | 15.0 | 131.1569 | 178.4195 | +26.490% |
+
 
 | |
 | :---: |
@@ -298,9 +341,21 @@ A positive skill score indicates that the model outperforms persistence, and a n
 
 ## Model 2 (`Model_2.ipynb`)
 
+| | Horizon_Days | Markov_MAE_km | Persistence_MAE_km | Skill_vs_Persistence_% | Coverage_% |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 1 | 3.0 | 52.4435 | 51.0639 | -2.709% | 92.597% |
+| 2 | 10.0 | 127.9616 | 131.0672 | +2.363% | 92.758% |
+| 3 | 15.0 | 168.0600 | 174.4514 | +3.659% | 92.845% |
+
 <p align = "center">
 <img width="1389" height="515" alt="m2-1" src="https://github.com/user-attachments/assets/e7e920e1-b8e1-47f4-ac9f-fb52249545f4" />
 </p>
+
+| Fold | Forecast_Days | Mean_Energy_Score_Model | Mean_Energy_Score_Persistence | Skill_vs_Persistence_% |
+| :---: | :---: | :---: | :---: | :---: |
+| 4 | 3.0 | 31.8626 | 37.5358 | +15.1141% |
+| 4 | 10.0 | 85.2229 | 111.7391 | +23.7304% |
+| 4 | 15.0 | 108.4731 | 143.7212 | +24.5253% |
 
 | |
 | :---: |
@@ -310,6 +365,12 @@ A positive skill score indicates that the model outperforms persistence, and a n
 | <img width="1550" height="637" alt="m2-5" src="https://github.com/user-attachments/assets/7b852e93-dd02-4a5c-bacc-bdfbb2663633" /> |
 
 ## Model 3 (`Model_3.ipynb`)
+
+| | Horizon_Days | Markov_MAE_km | Persistence_MAE_km | Skill_vs_Persistence_% |
+| :---: | :---: | :---: | :---: | :---: |
+| 1 | 3.0 | 38.3632 | 50.4702 | +23.989% |
+| 2 | 10.0 | 113.7357 | 130.2284 | +12.662% |
+| 3 | 15.0 | 154.3948 | 173.8517 | +11.188% |
 
 <p align = "center">
 <img width="2048" height="760" alt="m3-1" src="https://github.com/user-attachments/assets/a39525e5-f2c5-491f-8499-0747945c70d4" />

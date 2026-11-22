@@ -15,7 +15,9 @@ This study forecasts drifter positions, as a proxy for marine debris, in the Nor
 
 **Model 2** extends this approach by estimating four seasonal transition matrices (Mar-May, Jun-Aug, Sep-Nov, Dec-Feb) to test whether accounting for seasonal changes in currents improves forecasts. 
 
-**Model 3** takes a different, regression-based approach: it predicts each drifter’s displacement over the forecast horizon directly from its current position and recent movement. All three models are trained and tested using 5-fold cross-validation by drifter and evaluated against a persistence baseline using Mean Absolute Error, Skill score and the Energy Score. 
+**Model 3** takes a different, regression-based approach: it predicts each drifter’s displacement over the forecast horizon directly from its current position and recent movement.
+
+All three models are trained and tested using 5-fold cross-validation by drifter and evaluated against a persistence baseline using Mean Absolute Error, Skill score and the Energy Score. 
 Together, they assess how well data-driven models can predict where debris ends up, to support more effective tracking and clean-up.
 
 

@@ -283,9 +283,49 @@ A positive skill score indicates that the model outperforms persistence, and a n
 
 ## Model 1 (`Model_1.ipynb`)
 
+<p align = "center">
+<img width="1788" height="662" alt="m1-1" src="https://github.com/user-attachments/assets/706acc3e-b86c-4ae9-a7c9-08ef509541d8" />
+</p>
+
+| |
+| :---: |
+| <img width="1768" height="464" alt="m1-2" src="https://github.com/user-attachments/assets/5ee3f38f-e45b-4d47-b6cc-909b5e35f594" /> |
+| <img width="1774" height="488" alt="m1-3" src="https://github.com/user-attachments/assets/a4f1b34b-efbf-4c9f-97e4-3a0f5a8efa5b" /> |
+| <img width="1774" height="462" alt="m1-4" src="https://github.com/user-attachments/assets/873b9357-b035-4f9a-bdaa-7c3345370685" /> |
+| <img width="1772" height="488" alt="m1-5" src="https://github.com/user-attachments/assets/5ea69a6f-fd38-4911-ba64-965ee38c1a27" /> |
+| <img width="1770" height="480" alt="m1-6" src="https://github.com/user-attachments/assets/e1b1db02-f025-4ede-87e5-46d8f06dcb75" /> |
+
+
 ## Model 2 (`Model_2.ipynb`)
 
+<p align = "center">
+<img width="1389" height="515" alt="m2-1" src="https://github.com/user-attachments/assets/e7e920e1-b8e1-47f4-ac9f-fb52249545f4" />
+</p>
+
+| |
+| :---: |
+| <img width="1550" height="637" alt="m2-2" src="https://github.com/user-attachments/assets/cb2725e4-db50-45c8-8fff-313a53da58a8" /> |
+| <img width="1550" height="637" alt="m2-3" src="https://github.com/user-attachments/assets/4d9cdd4e-9615-450f-87f0-b8c8c56ae6c9" /> |
+| <img width="1554" height="637" alt="m2-4" src="https://github.com/user-attachments/assets/f4c68279-c88c-48b9-846f-c4e273bc7e7c" /> |
+| <img width="1550" height="637" alt="m2-5" src="https://github.com/user-attachments/assets/7b852e93-dd02-4a5c-bacc-bdfbb2663633" /> |
+
 ## Model 3 (`Model_3.ipynb`)
+
+<p align = "center">
+<img width="2048" height="760" alt="m3-1" src="https://github.com/user-attachments/assets/a39525e5-f2c5-491f-8499-0747945c70d4" />
+</p>
+
+| |
+| :---: |
+| <img width="2048" height="535" alt="m3-2" src="https://github.com/user-attachments/assets/76ca1672-f1d6-4867-abcf-629caf37387c" /> |
+| <img width="2048" height="555" alt="m3-3" src="https://github.com/user-attachments/assets/a00990c7-0551-494a-a695-caa979cc5a59" /> |
+| <img width="2048" height="544" alt="m3-4" src="https://github.com/user-attachments/assets/d46530d1-a26a-4670-ba74-ddcd13dbd008" /> |
+| <img width="2048" height="548" alt="m3-5" src="https://github.com/user-attachments/assets/84a36259-cd9a-47df-9c81-a805693d8e51" /> |
+| <img width="2048" height="536" alt="m3-6" src="https://github.com/user-attachments/assets/c07fc526-bc86-4053-bae5-4b19d8adcd78" /> |
+
+<p align = "center">
+<img width="2026" height="1174" alt="m3-7" src="https://github.com/user-attachments/assets/9b509425-a1bb-4e50-aa89-8dd74123c20d" />
+</p>
 
 ## 9. Discussion of Results
 

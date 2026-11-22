@@ -47,9 +47,13 @@ The importance of the oceans and the threats posed by marine debris motivated th
 
 ## 4. Existing Studies & Opportunities
 
-There are studies that focus on the accumulation of garbage and prove the location of several garbage patches across the Earth’s surface, including the Great Pacific Garbage Patch, which is the largest accumulation of plastic in the world. This includes research of drifters and their ability to track garbage accumulation by also analysing ocean behaviour through the GDP data (Lee et al., 2025).
+Previous studies on marine debris accumulation have identified major oceanic garbage patches and proved the location of several garbage patches across the Earth’s surface, including the Great Pacific Garbage Patch, which is the largest accumulation of plastic in the world (The Ocean Cleanup, 2025). There are also studies that have researched into drifter behaviour and how they can track marine debris movement through analysis of ocean current data (Lee et al., 2025).
 
-Past studies have shown a link between seasonality and drifter behaviour. A notable paper was able to divide the year into clusters based on the seasons/SST changes and drifter behaviour (Rodríguez-Méndez et al., 2026). This allows for the opportunity to potentially look into the differences in drifter movement depending on the season through analysing SST and current velocity.
+Maximenko’s analysis into drifter movement shows that the “...probability for a drifter to travel between two locations depends only on the duration of the travel but does not depend on the selection of the start time moment” (Maximeko et al., 2012). This characteristic of drifters satisfies the Markov memoryless property, where the movement of a drifter is independent of its previous location. This provides for the possibility to conduct a probabilistic Markov approach for prediction of drifter movement.
+
+Previous research into garbage accumulation mainly visualise the projection of garbage using current GDP data, and project marine debris movement over a longer time period. 
+
+We aim to create a final product that can predict where garbage will end up in the short-term horizon by extrapolating from the data, which creates an opportunity for a more accurate, targeted cleanup. 
 
 <p align="center">
   <img width="512" height="275" alt="season" src="https://github.com/user-attachments/assets/3ba9ad16-229a-4cbc-9af1-4c911915dd68" />
@@ -130,7 +134,7 @@ For each 0.1° × 0.1° cell, the $mean_{ve}$, $mean_{vn}$, and $mean_{sst}$ wer
 In the velocity heat map on the left, the Gulf Stream stands out immediately off the North American coast. The Caribbean also has some faster moving waters. Whilst the central North Atlantic seems quiet, there are streaks of gradually moving currents throughout.
 As expected, sea surface temperature generally cools towards higher latitudes. Notable features include the Gulf Steam, which is warmer than its surrounding regions,and the sudden transition to cool waters, represented by dark blue, near New England and Atlantic Canada.The Caribbean is also warmer than other areas at the same latitudes.
 
-### Ocean Clustering
+### 7.4 Ocean Clustering
 
 To answer our first objective, an unsupervised machine learning model was used to classify our region, the North Atlantic Basin, into distinct ocean clusters. A **Gaussian Mixture Model** (GMM) was applied to the valid spatial grid cells.
 GMM was chosen over simpler distance-based clustering methods (such as K-Means) because representing the data as a combination of overlapping multi-dimensional normal (Gaussian) distributions would allow the model to capture the natural, irregularly shaped patterns typical of ocean current and temperature fronts.
@@ -145,8 +149,8 @@ Using the Bayesian Information Criterion (BIC), *k=4*  was automatically selecte
 Mapping and profiling these clusters clearly highlighted major oceanographic features, including the Sargasso Sea, North Equatorial Current, Gulf Stream, and North Atlantic Current. <br>
 <br>
 
-<p align = "centre">
-<img width="1222" height="1038" alt="clusters" src="https://github.com/user-attachments/assets/1fcbb3b0-0b8c-47a8-a73e-a8204b888b76" />
+<p align = "center">
+<img width="700" height="600" alt="clusters" src="https://github.com/user-attachments/assets/1fcbb3b0-0b8c-47a8-a73e-a8204b888b76" />
   </p>
   
 <div align="center">
@@ -167,8 +171,8 @@ With the ocean basin reliably segmented into distinct regimes, we next applied a
 <br>
 
 <p align = "center"> <b>Initial first-order Markov Chain </b></p>
-<p align = "centre">
-  <img width="1210" height="940" alt="initial_markov" src="https://github.com/user-attachments/assets/b0571771-33ca-49d5-a82b-8a1ddc277956" />
+<p align = "center">
+  <img width="700" height="600" alt="initial_markov" src="https://github.com/user-attachments/assets/b0571771-33ca-49d5-a82b-8a1ddc277956" />
 </p>
 
 However, the results were largely inconclusive for two main reasons: <br>
@@ -178,7 +182,91 @@ However, the results were largely inconclusive for two main reasons: <br>
 Thus, for further analysis, we decided to stick with dividing the region into fine  0.1° × 0.1° cells and conducting the analysis at that grid resolution.
 
 ## 8. Methodology
+This study divides the North Atlantic basin region into grids of 0.1° × 0.1° cells and models drifter transition within these cells using the data. <br>
+<br>
+Each observation within the cleaned dataset records the drifter ID, time, latitude and longitude, velocities, temperature and drogue status sorted by ID and time so that each drifter’s trajectory could be followed step-by-step. <br>
+<br>
+To ensure that models were trained and tested in the same manner, all three models use the 5-Fold cross-validation split on drifter ID. Due to this, no trajectory appears in both the training and testing sets. Each drifter is held out exactly once and the results are averaged over the folds, with further assessment done on the best performing fold due to computational limits.<br>
+<br>
 
+**Markov Chain**
+Models 1 and 2 model drifter movements using discrete-time Markov Chain. Using the coordinates, each position is mapped to a state/cell index using the following formulas: <br>
+
+$$
+row = \frac{\left[ LAT_{max} - lat \right]}{0.1}
+$$
+$$
+col = \left\lfloor \frac{lon - LON_{min}}{0.1} \right\rfloor
+$$
+$$
+state = row \times N_{lon} + col
+$$
+<br>
+
+Giving a total of 350 x 600 = **210,000** states. <br>
+<br>
+Subsequently, the central coordinates of the corresponding grid are mapped using the following formulas: <br>
+<br>
+
+<br>
+
+A transition is defined as two consecutive observations from the same drifter exactly 6 hours apart. Counting all such transitions in the training data gives a count matrix `N` where `N_ij` is the number of moves from cell i to cell j. Normalising each row gives the transition probability matrix: <br>
+
+$$
+P_{ij} = \frac{N_{ij}}{\sum_k N_{ik}}
+$$
+
+<br>
+
+`P` is stored as a sparse **210,000 x 210,000** matrix. To forecast `n_steps` ahead (`n_steps` x 6 hrs), an initial distribution $\pi^{(0)}$ concentrated on the start cell is propagated as $\pi^{(n)} = \pi^{(0)} P^n$.<br>
+The point forecast is the most probable end cell. A probabilistic forecast is also produced by Monte-Carlo simulation of multiple simulated drifters taking random walks, forming a cloud of possible end positions.<br>
+Model 2 follows the same procedure as Model 1 but estimates four matrices, one for each season: Mar-May, Jun-Aug, Sep-Nov, Dec-Feb. Each matrix is built only from training transitions whose starting falls in season `q`. Test windows that lie entirely within a single season are forecast using that season’s matrix. Model 2 therefore tests whether including seasonality affects results.
+
+**Linear Regressiom**
+
+Model 3 takes a regression-based approach and predicts a drifter’s total displacement over the forecast horizon without a grid structure. Using Ordinary Least Squares, the eastwards ($\Delta x$) and northward ($\Delta y$) displacements in km are modelled as: <br>
+
+$$
+\Delta x = \beta_{0,x} + \beta_{1,x}\,lat + \beta_{2,x}\,lon + \beta_{3,x}\,\Delta x_{lag1} + \beta_{4,x}\,\Delta y_{lag1} + \varepsilon_x 
+$$
+$$
+\Delta y = \beta_{0,y} + \beta_{1,y}\,lat + \beta_{2,y}\,lon + \beta_{3,y}\,\Delta x_{lag1} + \beta_{4,y}\,\Delta y_{lag1} + \varepsilon_y 
+$$
+
+<br>
+Lat and lon are the drifter’s current positions, and $\Delta x_{lag1}$ and $\Delta y_{lag1}$ are its displacement over the previous 6 hours, capturing short term momentum. The errors are modelled as a bivariate normal distribution.
+
+### 8.1. Persistence as a Baseline
+
+The performance of the models are compared against a persistence forecast baseline, which assumes that after a duration of every 6 hours, a drifter would stay in the same cell it started in, predicting zero change. As the ocean is inertial (changes slowly), a persistence forecast provides a good baseline for ocean models (Furner et al., 2025). <br>
+<br>
+Persistence is a possible forecast and sets a standard: a useful model must outperform it.
+
+### 8.2 Evaluation Metrics
+
+All metrics are calculated on test drifters for forecasts of horizons of 3,10 and 15 days. Along with that, an extended horizon of 14 and 30 days, and Monte Carlo simulation is performed on the best performing fold. <br>
+<br>
+Point forecast error is measured as the great-circle distance between the forecasted and observed endpoint, calculated with the haversine formula, summarised by the Mean Absolute Error over all the test drifters:<br>
+
+$$ 
+MAE = \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i| 
+$$
+
+The probabilistic forecasts are evaluated using the Energy Score, a proper scoring guide for multivariate forecast distributions:<br>
+
+$$
+ES = \mathbb{E}\|X - y\| - \frac{1}{2}\mathbb{E}\|X - X'\|,
+$$
+
+where `X` and `X’` are independent draws from the forecast cloud `F` and `y` is the observed end position. The first term measures the average distance from the cloud to the observation, and the second term measures the spread of the cloud. The score therefore rewards forecasts that are both accurate and realistically dispersed. <br>
+<br>
+Performance relative to the persistence baseline is measured by the skill score:<br>
+
+$$
+Skill = 1 - \frac{Model}{Persistence}
+$$
+
+A positive skill score indicates that the model outperforms persistence, and a negative score indicates it performs worse.  
 
 ## Model 1 (`Model_1.ipynb`)
 

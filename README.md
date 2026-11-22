@@ -208,6 +208,14 @@ Giving a total of 350 x 600 = **210,000** states. <br>
 Subsequently, the central coordinates of the corresponding grid are mapped using the following formulas: <br>
 <br>
 
+$$
+row = \left\lfloor \frac{state}{N_{lon}} \right\rfloor \qquad col = state \bmod N_{lon}
+$$
+
+$$
+lat = LAT_{max} - (row + 0.5)\Delta \qquad lon = LON_{min} + (col + 0.5)\Delta
+$$
+
 <br>
 
 A transition is defined as two consecutive observations from the same drifter exactly 6 hours apart. Counting all such transitions in the training data gives a count matrix `N` where `N_ij` is the number of moves from cell i to cell j. Normalising each row gives the transition probability matrix: <br>
@@ -227,14 +235,15 @@ Model 2 follows the same procedure as Model 1 but estimates four matrices, one f
 Model 3 takes a regression-based approach and predicts a drifter’s total displacement over the forecast horizon without a grid structure. Using Ordinary Least Squares, the eastwards ($\Delta x$) and northward ($\Delta y$) displacements in km are modelled as: <br>
 
 $$
-\Delta x = \beta_{0,x} + \beta_{1,x}\,lat + \beta_{2,x}\,lon + \beta_{3,x}\,\Delta x_{lag1} + \beta_{4,x}\,\Delta y_{lag1} + \varepsilon_x 
+\Delta x = \beta_{0,x} + \beta_{1,x} lat + \beta_{2,x} lon + \beta_{3,x} \Delta x_{lag1} + \beta_{4,x} \Delta y_{lag1} + \varepsilon_x
 $$
+
 $$
-\Delta y = \beta_{0,y} + \beta_{1,y}\,lat + \beta_{2,y}\,lon + \beta_{3,y}\,\Delta x_{lag1} + \beta_{4,y}\,\Delta y_{lag1} + \varepsilon_y 
+\Delta y = \beta_{0,y} + \beta_{1,y} lat + \beta_{2,y} lon + \beta_{3,y} \Delta x_{lag1} + \beta_{4,y} \Delta y_{lag1} + \varepsilon_y
 $$
 
 <br>
-Lat and lon are the drifter’s current positions, and $\Delta x_{lag1}$ and $\Delta y_{lag1}$ are its displacement over the previous 6 hours, capturing short term momentum. The errors are modelled as a bivariate normal distribution.
+Lat and lon are the drifter’s current positions, and $\Delta x_{lag1}$ and $\Delta y_{lag1}$ are its east and north displacements over the previous 6 hours, capturing short term momentum. The errors are modelled as a bivariate normal distribution.
 
 ### 8.1. Persistence as a Baseline
 

@@ -295,12 +295,19 @@ A positive skill score indicates that the model outperforms persistence, and a n
 
 1. Since data about the ocean will be collected from drifters, not all cells are guaranteed to have drifter data, especially after filtering for incomplete data. It may be substituted with other data, such as meteorological data, but finding a proper format and combining it with the drifter data may be technically challenging.
 2. Due to computation limitations, the six hourly dataset was used instead of a higher frequency. This study relies on this aggregated dataset to be a good approximation of ocean conditions at the measured time.
-3. A key assumption of this project and its usefulness is that drifters are a good proxy for plastic waste. Whilst drifters have been used as a proxy for plastic waste in previous studies, they establish that not all plastic waste behaves the same and that drouged and undrouged drifters are more useful for modelling different types of plastics (England et al, 2012). 
-
+   <ol type="a">
+     <li>Computation heavy when increasing the number of days to forecast / predict. A 3 hour wait time was experienced when running the models 1 and 2.</li>
+   </ol>
+3. A key assumption of this project and its usefulness is that drifters are a good proxy for plastic waste. Whilst drifters have been used as a proxy for plastic waste in previous studies, they establish that not all plastic waste behaves the same and that drogued and undrogued drifters are more useful for modelling different types of plastics (England et al., 2012).
+4. Given the time constraint that the team had, we had to sacrifice other viable methods because it was too complex. This is to ensure that there is progress throughout the term and the team is on track with the timeline.
+5. The team had limited domain expertise with regards to oceanography. A bulk of our time was used researching past research and getting to know what can be done with the team’s research.
 
 ## 12. Future Work
+1. Potentially dive into deeper research with our current seasonality model. Given the known fact that seasons do affect ocean behaviour, with enough time, we could potentially implement a seasonality model better. 
+2. Investigating in implementing a lag factor for the markov chain models. Since the linear models do not make a fair comparison with the markov chain model. 
 
 ## 13. AI Usage Statement & Reflection
+
 ### References
 
 1. Furner, Haynes, Jones, Munday, Paige & Shuckburgh (2025). The Challenge of land in a Neural Network Ocean Model, Environmental Data Science https://www.cambridge.org/core/journals/environmental-data-science/article/challenge-of-land-in-a-neural-network-ocean-model/845CF0FEF5898072DA1262564D52B494

@@ -91,7 +91,7 @@ Install Python version **3.10** or later and install **Juptyer** with `pip insta
   c. `zarr` is the storage format the dataset is read from <br>
   d. `Cartopy` draws the geographic maps used in the models <br>
 
-Additional libraries imported in the model are as follows-
+Additional libraries imported in the model are as follows:
 
 | Library | Imported as / from | Used for |
 |---|---|---|

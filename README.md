@@ -118,6 +118,7 @@ Building on this approach, we conducted an initial exploratory analysis of the *
 <p align="center">
   <img width="512" height="206" alt="initial" src="https://github.com/user-attachments/assets/81afafb7-6b34-435a-a21e-4bfca3f9bafd" />
 </p>
+<br>
 
 ### 7.3 Velocity and Sea Surface Temperature
 
@@ -324,6 +325,7 @@ Across all 5 cross-validation folds (over 1 million unseen test pairs per fold),
 <br>
 <br>
 <br>
+
 **Aggregating across all folds:**
 
 | | <sub>Horizon_Days</sub> | <sub>Markov_MAE_km</sub> | <sub>Persistence_MAE_km</sub> | <sub>Skill_vs_Persistence_%</sub> |

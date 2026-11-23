@@ -440,6 +440,29 @@ In Fold 4, no actual held-out drifter endpoints are captured in Q2, while Q1, Q3
 
 ## Model 3 (`Model_3.ipynb`)
 
+### Multivariate Linear Regression with Bivariate Normal Dispersion 
+
+For the third model, we took a very different approach. We built a continuous-space trajectory forecasting model predicting the total west-east ($\Delta x_{\text{lag1}}$) and south-north ($\Delta y_{\text{lag1}}$) displacements over specific forecast horizons using OLS.
+
+**Feature selection & Model Evolution**
+
+Initially, we had used the drifter's starting coordinates (`lat`, `lon`) as the only features of our model. It was a design choice made so that the model served as a simple baseline for our markov models. However, as physical drifters carry substantial short-term momentum, especially over short horizons, we experimented with adding one-step (6 hrs) lagged displacements representing the west-east and south-north distance traveled in the 6 hours immediately prior to forecast time to both regressions. With lag incorporated, Model 3 evolved from a simple baseline to a standalone model.<br>
+Unlike prior memoryless grid-transition approaches, this model leverages short-term kinematics of the ocean to predict where marine debris end up.
+
+**How the model works**
+
+  - **5-fold cross validation:** For a rigorous analysis, a 5-fold cross validation with 80%/20% drifter-level split was made per fold (assigning ~780 unseen drifters to each test fold).<br>
+  - **Forecast window data extraction:**  Using `prepare_frame` and `make_window_table`, we verified and extracted consecutive 6-hour observations to get continuous trajectory segments, computing true west-east and south-north displacements alongside 6-hour lagged displacements.<br>
+  - **Horizon specific OLS and residual covariance estimation:** In `fit_linear` and `fit_cv`, we fitted separate bivariate Ordinary Least Squares (OLS) regressions directly for 3, 10 and 15 day horizons across all 5 folds (extended horizons up to 30 days on Fold 4), alongside 22 residual `covariance matrix ()` to capture directional spread and error correlation.<br>
+  - **Point forecast evaluation & multi-horizon error curves:** In `evaluate_cv_forecasts`, predicted displacements are converted back to end coordinates (`end_position`) on held-out test drifters, measuring haversine MAE (`hav`) and percentage skill score against persistence baseline. We also generated a 5-fold CV error curve across 16 horizons from 6 hours (0.25 days) to 90 days. <br>
+  - **Probabilistic Energy Score:** In `cloud_eval_fold` and `evaluate_best_fold_energy_score`, we modelled the OLS residuals as a bivariate normal distribution, transforming the deterministic regression into a probabilistic dispersion model capable of simulating spatial uncertainty clouds around predicted drift paths.<br>
+On the best-performing fold (Fold 4), we draw 200 Monte Carlo error samples across 20,000 seasonally stratified unseen test windows over 3, 10, 15 day horizons evaluating resulting distribution with energy score, centroid error, cloud spread and central 50%/90% containment. We compared performance of the model with an intercept-only model and persistence baseline.<br>
+  - **Case study dispersion forecasts:** In `forecast_garbage_patch_fate_linear`, we simulate 1,000 particles on Fold 4 over 3, 10, 15 day horizons onto the 0.1° × 0.1° spatial grid using `to_state`  across the same five high-impact marine zones.
+
+**Results and Interpretation**
+
+**Results of the Linear Model**
+
 | | <sub>Horizon_Days</sub> | <sub>Markov_MAE_km</sub> | <sub>Persistence_MAE_km</sub> | <sub>Skill_vs_Persistence_%</sub> |
 | :---: | :---: | :---: | :---: | :---: |
 | <sub>1</sub> | <sub>3.0</sub> | <sub>38.3632</sub> | <sub>50.4702</sub> | <sub>+23.989%</sub> |
@@ -469,6 +492,16 @@ To execute the model, open `Model_2.ipnyb` from the repository and run all cells
 ## 9. Discussion of Results
 
 ## 10. Conclusion
+
+Through our research, it is found that drifters are an appropriate proxy for marine debris as academics have previously used them to identify garbage patches in the ocean (van Sebille et al., 2012) (Shirah & Mitchell, 2015). 
+
+Ocean cells do form geographically meaningful clusters based on characteristics measured by drifter observation, such as temperature and velocity. Though clusters reflected known North Atlantic ocean current circulations such as the Gulf Stream and North Equatorial current, these clusters were geographically large, meaning that they were not as useful for the purposes of precise short term forecasting.
+
+Forecasting drifter movements saw modest success. Model 1 saw small improvements in skill score as forecast horizons increased, but even after 15 days, the MAE was only 7.1% better than persistence. This meant that the model was just slightly better than simply predicting that a drifter would not move at all. When evaluated using Energy Score, Model 1 was more promising, with a ~26% skill over persistence on Fold 4, reflecting the Markov Chain’s value as a probabilistic model that is able to produce forecast clouds that can account for the uncertainties of ocean currents.
+
+In terms of skill score, Model 1 was better than Model 2 in both MAE and Energy Score, contrary to initial expectations that adjusting the matrix for each season could produce more accurate forecasts. Both however, reflect a pattern of the skill score growing with the time horizon, indicating that for further time horizons, Model 1 and Model 2 would be substantially better than persistence. 
+
+As for Model 3, it was found that lagged displacements can include useful information for short-term forecasting, but that using this model as a baseline would be an unfair comparison for Models 1 and 2. 
 
 ## 11. Scope and Limitations
 

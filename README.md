@@ -524,7 +524,7 @@ On the best-performing fold (Fold 4), we draw 200 Monte Carlo error samples acro
 
 **Execution**
 
-To execute the model, open `Model_2.ipnyb` from the repository and run all cells sequentially. It automatically installs the required dependencies, loads the 6-hourly drifter dataset and reproduces all the above results and dispersion plots.
+To execute the model, open `Model_3.ipnyb` from the repository and run all cells sequentially. It automatically installs the required dependencies, loads the 6-hourly drifter dataset and reproduces all the above results and dispersion plots.
 
 ## 9. Discussion of Results
 

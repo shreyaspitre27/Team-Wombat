@@ -487,14 +487,36 @@ To execute the model, open `Model_2.ipnyb` from the repository and run all cells
 
 ## 13. AI Usage Statement & Reflection
 
+AI was used for a variety of tasks throughout this project, helping save time and quickly build knowledge of the field of oceanography. However, it also created new tasks, such as verifying that AI code worked correctly and that AI suggestions had backing from reputable sources. <br>
+
+AI’s most important usage was creating the project’s code. The usage of AI meant that code was generally functional and flexible, reducing the time needed for producing code. However, code still needed to be verified to ensure it worked in the desired manner. The code was not always perfect and needed some adjustment. <br>
+
+AI was also used as a starting point for researching the field of oceanography. It assisted in finding research papers and in explaining Markov Chain models so that the entire group had knowledge of the project's technical aspects. This was extremely useful for the group to build an understanding of oceanography. <br>
+
+Though with that said, AI suggestions were particularly useful, helping provide the needed information to make important choices for this project. This included suggestions for the specification for Model 3, providing its rationale which was generally satisfactory. AI was also helpful in generating forecast clouds using a linear model, which relied on mathematics outside of what the group had learned thus far. The forecast cloud was generated successfully but the mathematics behind it was not fully understood. <br>
+
+It also suggested a wide variety of metrics for evaluating probabilistic forecast models, from which we chose to present the Energy Score. It was particularly useful in explaining how these metrics were mathematically calculated, helping to make an informed decision about model evaluation choices. AI was also used in other minor tasks such as editing and spellcheck. <br>
+
+Overall, AI was very useful in this project and was found to be very capable of the tasks given to it. But given that AI can still make mistakes, it was important to check its work and not to treat it as a definitive source of information, keeping final decision making power in the hands of the group. <br>
+
 ### References
 
-1. Furner, Haynes, Jones, Munday, Paige & Shuckburgh (2025). The Challenge of land in a Neural Network Ocean Model, Environmental Data Science https://www.cambridge.org/core/journals/environmental-data-science/article/challenge-of-land-in-a-neural-network-ocean-model/845CF0FEF5898072DA1262564D52B494
-2. Lee, D.-K., & Maximenko, N. (2025). Surface drifters and Ocean Dynamics: A review of technological advancements and scientific contributions. Ocean Science Journal, 60(2). https://doi.org/10.1007/s12601-025-00217-x
-3. McIlgorm, A., Raubenheimer, K., McIlgorm, D. E., Nichols, R. (2022). The cost of marine litter damage to the global marine economy. International Knowledge Hub Against Plastic Pollution. https://ikhapp.org/stories-and-research-brief/the-cost-of-marine-litter-damage-to-the-global-marine-economy/
-4. Nikolai, M., Hafner, J., & Niiler, P. (2012). Pathways of marine debris derived from trajectories of Lagrangian drifters. At-Sea Detection of Derelict Fishing Gear, 65(1), 51–62. https://doi.org/10.1016/j.marpolbul.2011.04.016
-5. Rodríguez-Méndez, V., Ser-Giacomi, E., Ramasco, J. J., López, C., Hernández-García, E. (2026). A Comparative Analysis of Clustering Algorithms for Characterizing Surface Ocean Variability in the Western Mediterranean [Campus Universitat de les Illes Balears]. https://arxiv.org/html/2605.26666v1#bib.bib20
-6. Shirah, G., & Mitchell, H. (2015, August 10). Garbage patch visualization experiment. NASA Scientific Visualization Studio. https://svs.gsfc.nasa.gov/4174
-7. van Sebille, E., England, M. H., & Froyland, G. (2012). Origin, dynamics and evolution of ocean garbage patches from observed surface drifters. Environmental Research Letters, 7(4), 044040. https://doi.org/10.1088/1748-9326/7/4/044040
+1. Costello, C., Cao, L., Gelcich, S., Cisneros-Mata, M. Á., Free, C. M., Froehlich, H. E., Golden, C. D., Ishimura, G., Maier, J., Macadam-Somer, I., Mangin, T., Melnychuk, M. C., Miyahara, M., de Moor, C. L., Naylor, R., Nøstbakken, L., Ojea, E., O’Reilly, E., Parma, A. M., … Lubchenco, J. (2020). The future of food from the sea. Nature, 588(7836), 95–100. https://doi.org/10.1038/s41586-020-2616-y<br>
+2. Furner, Haynes, Jones, Munday, Paige & Shuckburgh (2025). The Challenge of land in a Neural Network Ocean Model, Environmental Data Science https://www.cambridge.org/core/journals/environmental-data-science/article/challenge-of-land-in-a-neural-network-ocean-model/845CF0FEF5898072DA1262564D52B494<br>
+3. Lebreton, L. (2018). Evidence that the great pacific garbage patch is rapidly accumulating plastic. Scientific Reports, 8(1). https://doi.org/10.1038/s41598-018-22939-w<br>
+4. Lee, D.-K., & Maximenko, N. (2025). Surface drifters and Ocean Dynamics: A review of technological advancements and scientific contributions. Ocean Science Journal, 60(2). https://doi.org/10.1007/s12601-025-00217-x<br>
+5. McIlgorm, A., Raubenheimer, K., McIlgorm, D. E., & Nichols, R. (2022). The cost of marine litter damage to the global marine economy: Insights from the Asia-Pacific into prevention and the cost of inaction. Marine Pollution Bulletin, 174(113167), 113167. https://doi.org/10.1016/j.marpolbul.2021.113167<br>
+6. Nikolai, M., Hafner, J., & Niiler, P. (2012). Pathways of marine debris derived from trajectories of Lagrangian drifters. At-Sea Detection of Derelict Fishing Gear, 65(1), 51–62. https://doi.org/10.1016/j.marpolbul.2011.04.016<br>
+7. NOAA. (2021, February 26). Why should we care about the ocean? NOAA. Noaa.Gov. https://oceanservice.noaa.gov/facts/why-care-about-ocean.html<br>
+8. The Ocean Cleanup. (2025). The great pacific garbage patch. The Ocean Cleanup. https://theoceancleanup.com/great-pacific-garbage-patch/<br>
+9. Reisser, J., Slat, B., Noble, K., du Plessis, K., Epp, M., Proietti, M., de Sonneville, J., Becker, T., & Pattiaratchi, C. (2015). The vertical distribution of buoyant plastics at sea: An observational study in the north atlantic gyre. Biogeosciences, 12(4), 1249–1256. https://doi.org/10.5194/bg-12-1249-2015<br>
+10. Rodríguez-Méndez, V., Ser-Giacomi, E., Ramasco, J. J., López, C., Hernández-García, E. (2026). A Comparative Analysis of Clustering Algorithms for Characterizing Surface Ocean Variability in the Western Mediterranean [Campus Universitat de les Illes Balears]. https://arxiv.org/html/2605.26666v1#bib.bib20<br>
+11. Shirah, G., & Mitchell, H. (2015, August 10). Garbage patch visualization experiment. NASA Scientific Visualization Studio. https://svs.gsfc.nasa.gov/4174<br>
+12. van Sebille, E., England, M. H., & Froyland, G. (2012). Origin, dynamics and evolution of ocean garbage patches from observed surface drifters. Environmental Research Letters, 7(4), 044040. https://doi.org/10.1088/1748-9326/7/4/044040<br>
+13. UNCTAD. (2025, April 23). Shipping data: UNCTAD releases new seaborne trade statistics. UN Trade and Development (UNCTAD). https://unctad.org/news/shipping-data-unctad-releases-new-seaborne-trade-statistics<br>
+14. United Nations. (2022). Goal 14: Conserve and sustainably use the oceans, seas and marine resources. United Nations. United Nations Sustainable Development. https://www.un.org/sustainabledevelopment/oceans/<br>
+15. World Wildlife Fund. (2019). Our seas: The vital role of coastal and high seas [Educational brochure/science overview]. https://www.wwf.org.uk/sites/default/files/2020-01/Our_Planet_ourseas.pdf<br>
+16. World Wildlife Fund. (2025, June 27). Plastic in our oceans is killing marine mammals. Latest Blogs. Wwf.Org.Au. https://wwf.org.au/blogs/plastic-in-our-oceans-is-killing-marine-mammals
+
 
 

@@ -160,12 +160,12 @@ Mapping and profiling these clusters clearly highlighted major oceanographic fea
 
 ### Table of Ocean Cluster Profiles
 
-| cluster | n_cells | ve_mean | vn_mean | speed_mean | sst_mean | sst_std | confidence | share_% |
+| <sub>cluster</sub> | <sub>n_cells</sub> | <sub>ve_mean</sub> | <sub>vn_mean</sub> | <sub>speed_mean</sub> | <sub>sst_mean</sub> | <sub>sst_std</sub> | <sub>confidence</sub> | <sub>share_%</sub> |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 0 | 130939 | -0.040 | -0.000 | 0.071 | 24.6000 | 2.192 | 0.888 | 67.307 |
-| 1 | 34139 | 0.069 | -0.003 | 0.130 | 17.7740 | 3.933 | 0.862 | 17.549 |
-| 2 | 22025 | -0.184 | 0.040 | 0.245 | 27.5050 | 0.835 | 0.821 | 11.322 |
-| 3 | 7436 | 0.158 | 0.221 | 0.583 | 24.0050 | 3.722 | 0.874 | 3.822 |
+| <sub>0</sub> | <sub>130939</sub> | <sub>-0.040</sub> | <sub>-0.000</sub> | <sub>0.071</sub> | <sub>24.6000</sub> | <sub>2.192</sub> | <sub>0.888</sub> | <sub>67.307</sub> |
+| <sub>1</sub> | <sub>34139</sub> | <sub>0.069</sub> | <sub>-0.003</sub> | <sub>0.130</sub> | <sub>17.7740</sub> | <sub>3.933</sub> | <sub>0.862</sub> | <sub>17.549</sub> |
+| <sub>2</sub> | <sub>22025</sub> | <sub>-0.184</sub> | <sub>0.040</sub> | <sub>0.245</sub> | <sub>27.5050</sub> | <sub>0.835</sub> | <sub>0.821</sub> | <sub>11.322</sub> |
+| <sub>3</sub> | <sub>7436</sub> | <sub>0.158</sub> | <sub>0.221</sub> | <sub>0.583</sub> | <sub>24.0050</sub> | <sub>3.722</sub> | <sub>0.874</sub> | <sub>3.822</sub> |
 
 </div>
 
@@ -303,31 +303,31 @@ A single, basin-wide discrete time markov chain across our region is built in th
 
 Across all 5 cross-validation folds (over 1 million unseen test pairs per fold), the pooled discrete-time Markov chain consistently outperformed the persistence baseline at every forecast horizon.<br>
 
-| Fold | Horizon_Days | Markov_MAE_km | Persistence_MAE_km | Skill_vs_Persistence_% |
+| <sub>Fold</sub> | <sub>Horizon_Days</sub> | <sub>Markov_MAE_km</sub> | <sub>Persistence_MAE_km</sub> | <sub>Skill_vs_Persistence_%</sub> |
 | :---: | :---: | :---: | :---: | :---: |
-| 1 | 3.0 | 50.66 | 51.87 | +2.3% |
-| 1 | 10.0 | 125.57 | 133.05 | +5.6% |
-| 1 | 15.0 | 165.35 | 176.98 | +6.6% |
-| 2 | 3.0 | 48.87 | 49.53 | +1.3% |
-| 2 | 10.0 | 121.82 | 127.63 | +4.6% |
-| 2 | 15.0 | 160.69 | 170.05 | +5.5% |
-| 3 | 3.0 | 48.86 | 49.77 | +1.8% |
-| 3 | 10.0 | 121.83 | 128.52 | +5.2% |
-| 3 | 15.0 | 160.93 | 171.72 | +6.3% |
-| 4 | 3.0 | 49.22 | 50.33 | +2.2% |
-| 4 | 10.0 | 122.59 | 130.30 | +5.9% |
-| 4 | 15.0 | 161.92 | 174.32 | +7.1% |
-| 5 | 3.0 | 50.17 | 51.19 | +2.0% |
-| 5 | 10.0 | 125.17 | 132.28 | +5.4% |
-| 5 | 15.0 | 165.61 | 176.85 | +6.4% |
+| <sub>1</sub> | <sub>3.0</sub> | <sub>50.66</sub> | <sub>51.87</sub> | <sub>+2.3%</sub> |
+| <sub>1</sub> | <sub>10.0</sub> | <sub>125.57</sub> | <sub>133.05</sub> | <sub>+5.6%</sub> |
+| <sub>1</sub> | <sub>15.0</sub> | <sub>165.35</sub> | <sub>176.98</sub> | <sub>+6.6%</sub> |
+| <sub>2</sub> | <sub>3.0</sub> | <sub>48.87</sub> | <sub>49.53</sub> | <sub>+1.3%</sub> |
+| <sub>2</sub> | <sub>10.0</sub> | <sub>121.82</sub> | <sub>127.63</sub> | <sub>+4.6%</sub> |
+| <sub>2</sub> | <sub>15.0</sub> | <sub>160.69</sub> | <sub>170.05</sub> | <sub>+5.5%</sub> |
+| <sub>3</sub> | <sub>3.0</sub> | <sub>48.86</sub> | <sub>49.77</sub> | <sub>+1.8%</sub> |
+| <sub>3</sub> | <sub>10.0</sub> | <sub>121.83</sub> | <sub>128.52</sub> | <sub>+5.2%</sub> |
+| <sub>3</sub> | <sub>15.0</sub> | <sub>160.93</sub> | <sub>171.72</sub> | <sub>+6.3%</sub> |
+| <sub>4</sub> | <sub>3.0</sub> | <sub>49.22</sub> | <sub>50.33</sub> | <sub>+2.2%</sub> |
+| <sub>4</sub> | <sub>10.0</sub> | <sub>122.59</sub> | <sub>130.30</sub> | <sub>+5.9%</sub> |
+| <sub>4</sub> | <sub>15.0</sub> | <sub>161.92</sub> | <sub>174.32</sub> | <sub>+7.1%</sub> |
+| <sub>5</sub> | <sub>3.0</sub> | <sub>50.17</sub> | <sub>51.19</sub> | <sub>+2.0%</sub> |
+| <sub>5</sub> | <sub>10.0</sub> | <sub>125.17</sub> | <sub>132.28</sub> | <sub>+5.4%</sub> |
+| <sub>5</sub> | <sub>15.0</sub> | <sub>165.61</sub> | <sub>176.85</sub> | <sub>+6.4%</sub> |
 
 **Aggregating across all folds:**
 
-| | Horizon_Days | Markov_MAE_km | Persistence_MAE_km | Skill_vs_Persistence_% |
+| | <sub>Horizon_Days</sub> | <sub>Markov_MAE_km</sub> | <sub>Persistence_MAE_km</sub> | <sub>Skill_vs_Persistence_%</sub> |
 | :---: | :---: | :---: | :---: | :---: |
-| 1 | 3.0 | 49.5554 | 50.5406 | +1.944% |
-| 2 | 10.0 | 123.3979 | 130.3572 | +5.334% |
-| 3 | 15.0 | 162.9018 | 173.9837 | +6.364% |
+| <sub>1</sub> | <sub>3.0</sub> | <sub>49.5554</sub> | <sub>50.5406</sub> | <sub>+1.944%</sub> |
+| <sub>2</sub> | <sub>10.0</sub> | <sub>123.3979</sub> | <sub>130.3572</sub> | <sub>+5.334%</sub> |
+| <sub>3</sub> | <sub>15.0</sub> | <sub>162.9018</sub> | <sub>173.9837</sub> | <sub>+6.364%</sub> |
 
 Because ocean water has strong inertia and slow currents, drifters move smoothly over short windows, making persistence a tough short-term benchmark. <br>
 Consistently outperforming it across all 5 folds and at very short horizons of 3, 10 and 15 days proved that our transition matrix learns real ocean movements and not just noise. 
@@ -336,14 +336,13 @@ Consistently outperforming it across all 5 folds and at very short horizons of 3
 
 As Fold 4 achieved the highest validation skill across all splits (+2.2% at 3 days, +5.9% at 10 days and +7.1% at 15 days), we evaluated Fold 4 over an extended 14 and 30 day horizons.
 
-| | Horizon_Days | Markov_MAE_km | Persistence_MAE_km | Skill_vs_Persistence_% |
+| | <sub>Horizon_Days</sub> | <sub>Markov_MAE_km</sub> | <sub>Persistence_MAE_km</sub> | <sub>Skill_vs_Persistence_%</sub> |
 | :---: | :---: | :---: | :---: | :---: |
-| 1 | 3.0 | 49.2239 | 50.3306 | +2.199% |
-| 2 | 10.0 | 122.5912 | 130.3039 | +5.919% |
-| 3 | 14.0 | 154.5232 | 166.0518 | +6.943% |
-| 4 | 15.0 | 161.9244 | 174.3233 | +7.113% |
-| 5 | 30.0 | 255.2866 | 280.3197 | +8.930% |
-
+| <sub>1</sub> | <sub>3.0</sub> | <sub>49.2239</sub> | <sub>50.3306</sub> | <sub>+2.199%</sub> |
+| <sub>2</sub> | <sub>10.0</sub> | <sub>122.5912</sub> | <sub>130.3039</sub> | <sub>+5.919%</sub> |
+| <sub>3</sub> | <sub>14.0</sub> | <sub>154.5232</sub> | <sub>166.0518</sub> | <sub>+6.943%</sub> |
+| <sub>4</sub> | <sub>15.0</sub> | <sub>161.9244</sub> | <sub>174.3233</sub> | <sub>+7.113%</sub> |
+| <sub>5</sub> | <sub>30.0</sub> | <sub>255.2866</sub> | <sub>280.3197</sub> | <sub>+8.930%</sub> |
 
 <p align = "center">
 <img width="1788" height="662" alt="m1-1" src="https://github.com/user-attachments/assets/706acc3e-b86c-4ae9-a7c9-08ef509541d8" />
@@ -355,11 +354,11 @@ It is observed that the skill score climbs steadily across horizons to +8.93% at
 
 Evaluating 500 Monte Carlo particles across up to 500 starting cells on Fold 4’s unseen test set showed Model 1 beating persistence by **~26%** across all horizons.
 
-| Fold | Forecast_Days | Mean_Energy_Score_Model | Mean_Energy_Score_Persistence | Skill_vs_Persistence_% |
+| <sub>Fold</sub> | <sub>Forecast_Days</sub> | <sub>Mean_Energy_Score_Model</sub> | <sub>Mean_Energy_Score_Persistence</sub> | <sub>Skill_vs_Persistence_%</sub> |
 | :---: | :---: | :---: | :---: | :---: |
-| 4 | 3.0 | 36.2973 | 48.9699 | +25.878% |
-| 4 | 10.0 | 100.8931 | 135.8450 | +25.729% |
-| 4 | 15.0 | 131.1569 | 178.4195 | +26.490% |
+| <sub>4</sub> | <sub>3.0</sub> | <sub>36.2973</sub> | <sub>48.9699</sub> | <sub>+25.878%</sub> |
+| <sub>4</sub> | <sub>10.0</sub> | <sub>100.8931</sub> | <sub>135.8450</sub> | <sub>+25.729%</sub> |
+| <sub>4</sub> | <sub>15.0</sub> | <sub>131.1569</sub> | <sub>178.4195</sub> | <sub>+26.490%</sub> |
 
 Rather than relying on point forecasts, the Monte Carlo ensemble captured the realistic spatial spread of drifting debris, making it more practical for marine debris tracking.
 
@@ -381,21 +380,22 @@ To execute the model, open `Model_1.ipnyb` from the repository and run all cells
 
 ## Model 2 (`Model_2.ipynb`)
 
-| | Horizon_Days | Markov_MAE_km | Persistence_MAE_km | Skill_vs_Persistence_% | Coverage_% |
+| | <sub>Horizon_Days</sub> | <sub>Markov_MAE_km</sub> | <sub>Persistence_MAE_km</sub> | <sub>Skill_vs_Persistence_%</sub> | <sub>Coverage_%</sub> |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 1 | 3.0 | 52.4435 | 51.0639 | -2.709% | 92.597% |
-| 2 | 10.0 | 127.9616 | 131.0672 | +2.363% | 92.758% |
-| 3 | 15.0 | 168.0600 | 174.4514 | +3.659% | 92.845% |
+| <sub>1</sub> | <sub>3.0</sub> | <sub>52.4435</sub> | <sub>51.0639</sub> | <sub>-2.709%</sub> | <sub>92.597%</sub> |
+| <sub>2</sub> | <sub>10.0</sub> | <sub>127.9616</sub> | <sub>131.0672</sub> | <sub>+2.363%</sub> | <sub>92.758%</sub> |
+| <sub>3</sub> | <sub>15.0</sub> | <sub>168.0600</sub> | <sub>174.4514</sub> | <sub>+3.659%</sub> | <sub>92.845%</sub> |
 
 <p align = "center">
 <img width="1389" height="515" alt="m2-1" src="https://github.com/user-attachments/assets/e7e920e1-b8e1-47f4-ac9f-fb52249545f4" />
 </p>
 
-| Fold | Forecast_Days | Mean_Energy_Score_Model | Mean_Energy_Score_Persistence | Skill_vs_Persistence_% |
+| <sub>Fold</sub> | <sub>Forecast_Days</sub> | <sub>Mean_Energy_Score_Model</sub> | <sub>Mean_Energy_Score_Persistence</sub> | <sub>Skill_vs_Persistence_%</sub> |
 | :---: | :---: | :---: | :---: | :---: |
-| 4 | 3.0 | 31.8626 | 37.5358 | +15.1141% |
-| 4 | 10.0 | 85.2229 | 111.7391 | +23.7304% |
-| 4 | 15.0 | 108.4731 | 143.7212 | +24.5253% |
+| <sub>4</sub> | <sub>3.0</sub> | <sub>31.8626</sub> | <sub>37.5358</sub> | <sub>+15.1141%</sub> |
+| <sub>4</sub> | <sub>10.0</sub> | <sub>85.2229</sub> | <sub>111.7391</sub> | <sub>+23.7304%</sub> |
+| <sub>4</sub> | <sub>15.0</sub> | <sub>108.4731</sub> | <sub>143.7212</sub> | <sub>+24.5253%</sub> |
+
 
 | |
 | :---: |
@@ -406,11 +406,11 @@ To execute the model, open `Model_1.ipnyb` from the repository and run all cells
 
 ## Model 3 (`Model_3.ipynb`)
 
-| | Horizon_Days | Markov_MAE_km | Persistence_MAE_km | Skill_vs_Persistence_% |
+| | <sub>Horizon_Days</sub> | <sub>Markov_MAE_km</sub> | <sub>Persistence_MAE_km</sub> | <sub>Skill_vs_Persistence_%</sub> |
 | :---: | :---: | :---: | :---: | :---: |
-| 1 | 3.0 | 38.3632 | 50.4702 | +23.989% |
-| 2 | 10.0 | 113.7357 | 130.2284 | +12.662% |
-| 3 | 15.0 | 154.3948 | 173.8517 | +11.188% |
+| <sub>1</sub> | <sub>3.0</sub> | <sub>38.3632</sub> | <sub>50.4702</sub> | <sub>+23.989%</sub> |
+| <sub>2</sub> | <sub>10.0</sub> | <sub>113.7357</sub> | <sub>130.2284</sub> | <sub>+12.662%</sub> |
+| <sub>3</sub> | <sub>15.0</sub> | <sub>154.3948</sub> | <sub>173.8517</sub> | <sub>+11.188%</sub> |
 
 <p align = "center">
 <img width="2048" height="760" alt="m3-1" src="https://github.com/user-attachments/assets/a39525e5-f2c5-491f-8499-0747945c70d4" />

@@ -557,15 +557,16 @@ The time series lag in Model 3 gave it more information to work with when predic
 
 ## 10. Conclusion
 
-Through our research, it is found that drifters are an appropriate proxy for marine debris as academics have previously used them to identify garbage patches in the ocean (van Sebille et al., 2012) (Shirah & Mitchell, 2015). 
+Through our research, we have found that drifters are an appropriate proxy for marine debris as academics have previously used them to identify garbage patches in the ocean (van Sebille et al., 2012) (Shirah & Mitchell, 2015). 
 
-Ocean cells do form geographically meaningful clusters based on characteristics measured by drifter observation, such as temperature and velocity. Though clusters reflected known North Atlantic ocean current circulations such as the Gulf Stream and North Equatorial current, these clusters were geographically large, meaning that they were not as useful for the purposes of precise short term forecasting.
+Ocean cells do form geographically meaningful clusters based on characteristics measured by drifter observation, such as temperature and velocity. Though clusters reflected known North Atlantic ocean current circulations such as the Gulf Stream and North Equatorial current, these clusters were geographically large, meaning that they were not as useful for the purposes of precise short term forecasting as we had hoped.
 
 Forecasting drifter movements saw modest success. Model 1 saw small improvements in skill score as forecast horizons increased, but even after 15 days, the MAE was only 7.1% better than persistence. This meant that the model was just slightly better than simply predicting that a drifter would not move at all. When evaluated using Energy Score, Model 1 was more promising, with a ~26% skill over persistence on Fold 4, reflecting the Markov Chain’s value as a probabilistic model that is able to produce forecast clouds that can account for the uncertainties of ocean currents.
 
 In terms of skill score, Model 1 was better than Model 2 in both MAE and Energy Score, contrary to initial expectations that adjusting the matrix for each season could produce more accurate forecasts. Both however, reflect a pattern of the skill score growing with the time horizon, indicating that for further time horizons, Model 1 and Model 2 would be substantially better than persistence. 
 
 As for Model 3, it was found that lagged displacements can include useful information for short-term forecasting, but that using this model as a baseline would be an unfair comparison for Models 1 and 2. 
+A linear intercept only model was also found to be quite useful when considering the high positive skill score when compared to the persistence baseline. 
 
 ## 11. Scope and Limitations
 

@@ -528,12 +528,11 @@ As for Model 3, it was found that lagged displacements can include useful inform
 
 1. Since data about the ocean will be collected from drifters, not all cells are guaranteed to have drifter data, especially after filtering for incomplete data. It may be substituted with other data, such as meteorological data, but finding a proper format and combining it with the drifter data may be technically challenging.
 2. Due to computation limitations, the six hourly dataset was used instead of a higher frequency. This study relies on this aggregated dataset to be a good approximation of ocean conditions at the measured time.
-   <ol type="a">
+   <ol type="i">
      <li>Computation heavy when increasing the number of days to forecast / predict.</li>
-   </ol>
-   <ol type="b">
      <li>A 1-hour execution time for model 1 and 3-hours for model 2.</li>
    </ol>
+
 3. This study relies on this aggregated dataset to be a good approximation of ocean conditions at the measured time.
 4. A key assumption of this project is that drifters are a good proxy for plastic waste. Whilst drifters have been used as a proxy for plastic waste in prior research, they establish that not all plastic waste behaves the same. Nevertheless, they mention that drouged and undrouged drifters are useful for modelling different types of plastics (England et al, 2012).
 5. Given the time constraint that the team had, we could not implement lag-based Markov matrix evaluation as it was too complex, given our current understanding.

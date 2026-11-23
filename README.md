@@ -420,6 +420,7 @@ Model 2 underperforms the persistence baseline at the 3 day horizon, yielding ne
 The graph on the right shows skill score for the 3 day horizon for Fold 4 dipping below the red dotted 0 line. 
 <br>
 <br>
+<br>
 
 **Probabilistic Energy Score**
 
@@ -551,17 +552,18 @@ As for Model 3, it was found that lagged displacements can include useful inform
 
 ## 13. AI Usage Statement & Reflection
 
-AI was used for a variety of tasks throughout this project, helping save time and quickly build knowledge of the field of oceanography. However, it also created new tasks, such as verifying that AI code worked correctly and that AI suggestions had backing from reputable sources. <br>
+AI was used for a variety of tasks throughout this project, helping save time and quickly build knowledge of the field of oceanography. However, it also created new tasks, such as verifying that generated code worked correctly and that AI suggestions had backing from reputable sources. 
 
-AI’s most important usage was creating the project’s code. The usage of AI meant that code was generally functional and flexible, reducing the time needed for producing code. However, code still needed to be verified to ensure it worked in the desired manner. The code was not always perfect and needed some adjustment. <br>
+The most important usage of AI was creating the project’s code. The generated code was generally functional and flexible, saving time needed for producing code. However, the code still needed to be verified to ensure it worked in the desired manner and sometimes, needed adjustment. 
 
-AI was also used as a starting point for researching the field of oceanography. It assisted in finding research papers and in explaining Markov Chain models so that the entire group had knowledge of the project's technical aspects. This was extremely useful for the group to build an understanding of oceanography. <br>
+It was also used as a starting point for researching the field of oceanography. It assisted in finding research papers and in explaining Markov Chain models so that the entire group had knowledge of the project's technical aspects. This was extremely useful for the group to build an understanding of the project.
 
-Though with that said, AI suggestions were particularly useful, helping provide the needed information to make important choices for this project. This included suggestions for the specification for Model 3, providing its rationale which was generally satisfactory. AI was also helpful in generating forecast clouds using a linear model, which relied on mathematics outside of what the group had learned thus far. The forecast cloud was generated successfully but the mathematics behind it was not fully understood. <br>
+With that said, AI suggestions were particularly useful in providing needed information to make important choices for this project. This included suggestions for the specification for Model 3, providing its rationale, which seemed satisfactory. It was also helpful in generating forecast clouds using a linear model, which relied on mathematics outside of what the group had learned thus far. 
 
-It also suggested a wide variety of metrics for evaluating probabilistic forecast models, from which we chose to present the Energy Score. It was particularly useful in explaining how these metrics were mathematically calculated, helping to make an informed decision about model evaluation choices. AI was also used in other minor tasks such as editing and spellcheck. <br>
+It also suggested a wide variety of metrics for evaluating probabilistic forecast models, which included the Energy Score metric. It was particularly useful in explaining how these metrics were mathematically calculated, helping to make an informed decision about model evaluation choices. It was also used in other minor tasks such as editing and spellcheck. 
 
-Overall, AI was very useful in this project and was found to be very capable of the tasks given to it. But given that AI can still make mistakes, it was important to check its work and not to treat it as a definitive source of information, keeping final decision making power in the hands of the group. <br>
+Overall, AI was very useful in this project and was found to be very capable of the tasks it was utilised for. But given that AI can still make mistakes, it was important to manually check its work and not to treat it as a definitive source of information, with the final decisions made by the group. 
+
 
 ### References
 

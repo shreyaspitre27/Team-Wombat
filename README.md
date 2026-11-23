@@ -67,7 +67,8 @@ We aim to create a final product that can predict where garbage will end up in t
 **Region:** North Atlantic Ocean from 10°N 80°W to 45°N 20°W <br>
 **Time Period:** 1990-2022 <br>
 **Key Variables:** Latitude, Longitude, Eastward Velocity, Northbound Velocity, Temperature <br>
-
+<br>
+<br>
 |   Data Summary  |     |
 | --- | --- |
 |  Total observations (Complete Observations)   | 6,116,067 (5,712,403) |
@@ -320,7 +321,9 @@ Across all 5 cross-validation folds (over 1 million unseen test pairs per fold),
 | <sub>5</sub> | <sub>3.0</sub> | <sub>50.17</sub> | <sub>51.19</sub> | <sub>+2.0%</sub> |
 | <sub>5</sub> | <sub>10.0</sub> | <sub>125.17</sub> | <sub>132.28</sub> | <sub>+5.4%</sub> |
 | <sub>5</sub> | <sub>15.0</sub> | <sub>165.61</sub> | <sub>176.85</sub> | <sub>+6.4%</sub> |
-
+<br>
+<br>
+<br>
 **Aggregating across all folds:**
 
 | | <sub>Horizon_Days</sub> | <sub>Markov_MAE_km</sub> | <sub>Persistence_MAE_km</sub> | <sub>Skill_vs_Persistence_%</sub> |

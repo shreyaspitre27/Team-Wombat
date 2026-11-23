@@ -491,6 +491,24 @@ To execute the model, open `Model_2.ipnyb` from the repository and run all cells
 
 ## 9. Discussion of Results
 
+Comparing all three models against persistence highlights a clear tradeoff between data density, spatial grid structure and short-term momentum.
+
+**Model 1 vs Model 2**
+
+Overall, Model 1 consistently outperformed Model 2 across both MAE and Energy Score in terms of skill score.
+When comparing Model 1 to the persistence baseline, MAE increases over time for both as expected, but the gap between Model 1 and persistence widens as the time-horizon increases - highlighting Model 1’s potential for short-term forecasting.<br>
+The model does best when analysing the probabilistic skill, rather than a point prediction, demonstrating suitability for probabilistic forecasting over short-horizons.<br>
+<br>
+Despite prior research indicating that seasonality influences the movement of drifters, Model 2 consistently performed worse than Model 1 and yielded negative point-forecast skills scores. We hypothesized two primary reasons:
+  - **Data Sparsity:** When splitting the data across four quarters, the amount of data used for training each Markov chain matrix was significantly smaller than the single Model 1 matrix, leaving several ocean regions with sparse or no data for training producing erroneous and noisy estimates. <br>
+  - **Seasonal boundary:** Test drifters crossing seasonal boundaries within forecast horizon were excluded from evaluation, which negatively impacted validation.
+
+**Model 3 vs Markov Models**
+
+Model 3 achieved lower MAE and higher skill at 3 days than Model 1 because its 6-hour lagged displacements capture short-term momentum. However, an important thing to note is that, its skill steadily declined as horizon increased. It was hypothesised that this was observed as initial momentum faded and plain global linear regressions could not capture the bends around individual curved basin currents. Consequently, Model 1’s skill rose as local transitions accumulated and captured long-term variations.<br>
+<br>
+The time series lag in Model 3 gave it more information to work with when predicting drifter movement, however Model 1 and 2 were memoryless, meaning comparing the linear model as a baseline to our final products was not valid. Model 3 is therefore best treated as a short-horizon standalone model rather than a direct baseline the way we had intended it to be, leaving persistence to be our common benchmark.
+
 ## 10. Conclusion
 
 Through our research, it is found that drifters are an appropriate proxy for marine debris as academics have previously used them to identify garbage patches in the ocean (van Sebille et al., 2012) (Shirah & Mitchell, 2015). 
@@ -538,8 +556,8 @@ Overall, AI was very useful in this project and was found to be very capable of 
 2. Furner, Haynes, Jones, Munday, Paige & Shuckburgh (2025). The Challenge of land in a Neural Network Ocean Model, Environmental Data Science https://www.cambridge.org/core/journals/environmental-data-science/article/challenge-of-land-in-a-neural-network-ocean-model/845CF0FEF5898072DA1262564D52B494<br>
 3. Lebreton, L. (2018). Evidence that the great pacific garbage patch is rapidly accumulating plastic. Scientific Reports, 8(1). https://doi.org/10.1038/s41598-018-22939-w<br>
 4. Lee, D.-K., & Maximenko, N. (2025). Surface drifters and Ocean Dynamics: A review of technological advancements and scientific contributions. Ocean Science Journal, 60(2). https://doi.org/10.1007/s12601-025-00217-x<br>
-5. McIlgorm, A., Raubenheimer, K., McIlgorm, D. E., & Nichols, R. (2022). The cost of marine litter damage to the global marine economy: Insights from the Asia-Pacific into prevention and the cost of inaction. Marine Pollution Bulletin, 174(113167), 113167. https://doi.org/10.1016/j.marpolbul.2021.113167<br>
-6. Nikolai, M., Hafner, J., & Niiler, P. (2012). Pathways of marine debris derived from trajectories of Lagrangian drifters. At-Sea Detection of Derelict Fishing Gear, 65(1), 51–62. https://doi.org/10.1016/j.marpolbul.2011.04.016<br>
+5. Maximenko, N., Hafner, J., & Niiler, P. (2012). Pathways of marine debris derived from trajectories of Lagrangian drifters. At-Sea Detection of Derelict Fishing Gear, 65(1), 51–62. https://doi.org/10.1016/j.marpolbul.2011.04.016<br>
+6. McIlgorm, A., Raubenheimer, K., McIlgorm, D. E., & Nichols, R. (2022). The cost of marine litter damage to the global marine economy: Insights from the Asia-Pacific into prevention and the cost of inaction. Marine Pollution Bulletin, 174(113167), 113167. https://doi.org/10.1016/j.marpolbul.2021.113167<br>
 7. NOAA. (2021, February 26). Why should we care about the ocean? NOAA. Noaa.Gov. https://oceanservice.noaa.gov/facts/why-care-about-ocean.html<br>
 8. The Ocean Cleanup. (2025). The great pacific garbage patch. The Ocean Cleanup. https://theoceancleanup.com/great-pacific-garbage-patch/<br>
 9. Reisser, J., Slat, B., Noble, K., du Plessis, K., Epp, M., Proietti, M., de Sonneville, J., Becker, T., & Pattiaratchi, C. (2015). The vertical distribution of buoyant plastics at sea: An observational study in the north atlantic gyre. Biogeosciences, 12(4), 1249–1256. https://doi.org/10.5194/bg-12-1249-2015<br>

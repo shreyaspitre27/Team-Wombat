@@ -502,7 +502,7 @@ On the best-performing fold (Fold 4), we draw 200 Monte Carlo error samples acro
 | <sub>5</sub> | <sub>15.0</sub> | <sub>156.67</sub> | <sub>176.69</sub> | <sub>+11.3%</sub> |
 <br>
 
-| | <sub>Horizon_Days</sub> | <sub>Markov_MAE_km</sub> | <sub>Persistence_MAE_km</sub> | <sub>Skill_vs_Persistence_%</sub> |
+| | <sub>Horizon_Days</sub> | <sub>Linear_MAE_km</sub> | <sub>Persistence_MAE_km</sub> | <sub>Skill_vs_Persistence_%</sub> |
 | :---: | :---: | :---: | :---: | :---: |
 | <sub>1</sub> | <sub>3.0</sub> | <sub>38.3632</sub> | <sub>50.4702</sub> | <sub>+23.989%</sub> |
 | <sub>2</sub> | <sub>10.0</sub> | <sub>113.7357</sub> | <sub>130.2284</sub> | <sub>+12.662%</sub> |

@@ -445,6 +445,10 @@ Finally, we generated a seasonal marine debris dispersion forecast using fold 4 
 
 In Fold 4, no actual held-out drifter endpoints are captured in Q2, while Q1, Q3, and Q4 record only 1, 3, and 2 actual endpoints respectively. This highlights a key trade-off of Model 2: partitioning the dataset into four seasons reduces observation density within each quarter and excludes trajectories that cross seasonal boundaries, resulting in fewer observed validation endpoints in the dispersion plots.
 
+### Execution
+To execute the model, open `Model_2.ipnyb` from the repository and run all cells sequentially. It automatically installs the required dependencies, loads the 6-hourly drifter dataset and reproduces all the above results and dispersion plots.
+
+
 ## Model 3 (`Model_3.ipynb`)
 
 ### Multivariate Linear Regression with Bivariate Normal Dispersion 

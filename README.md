@@ -487,7 +487,7 @@ Across all the 5 folds, both the Training $R^2$ and the standard deviation of th
 There was a substantially high variance in west-east displacement (mean $R^2 = 0.318$) compared to south-north displacement (mean $R^2 = 0.123$). 
 These results could be due to major Atlantic currents such as Gulf Stream and North Equatorial Current having a significant zonal flow along latitude bounds, whereas meridional movements are governed more by chaotic eddies.
 
-There was also the east/north correlation being 0.117, which indicated that the dispersion cloud is slightly northeastward tilted, consistent with the dominant diagonal trajectory of the Gulf Stream.
+There was also the east/north correlation being 0.117, which indicated that the dispersion cloud is slightly northeastward tilted, consistent with the dominant diagonal trajectory of the Gulf Stream. <br>
 
 **5-Fold Cross-Validation Summary**
 
@@ -526,7 +526,7 @@ Aggregating across all folds, we get:
 An important point to note is that Model 3’s skill decreases monotonically over an increasing time horizon. 
 This might be because over short horizons, the 6-hour lagged displacement terms directly capture local velocity (as it is the 6-hourly displacement, it is a measure of velocity). 
 
-However, over a multi-week horizon, the initial momentum captured using a single global linear bivariate regression is not able to capture the curves and eddies of the basin anymore.
+However, over a multi-week horizon, the initial momentum captured using a single global linear bivariate regression is not able to capture the curves and eddies of the basin anymore. <br>
 
 **Extended Horizon Profiling**
 
@@ -549,6 +549,7 @@ The intercept-only model seems surprisingly useful, having better skill than per
 | <sub>4</sub> | <sub>3.0</sub> | <sub>28.6999</sub> | <sub>37.4117</sub> | <sub>50.1677</sub> | <sub>+42.792%</sub> | <sub>+25.427%</sub> |
 | <sub>4</sub> | <sub>10.0</sub> | <sub>83.4928</sub> | <sub>95.7697</sub> | <sub>130.2248</sub> | <sub>+35.886%</sub> | <sub>+26.458%</sub> |
 | <sub>4</sub> | <sub>15.0</sub> | <sub>111.9330</sub> | <sub>127.0154</sub> | <sub>173.4265</sub> | <sub>+35.459%</sub> | <sub>+26.083%</sub> |
+<br>
 
 **Spatial Case Studies**
 
@@ -573,12 +574,14 @@ There is a narrow shaded error band of $\pm 1$ standard deviation across the 5 f
 <p align = "center">
 <img width="512" alt="m3-7" src="https://github.com/user-attachments/assets/9b509425-a1bb-4e50-aa89-8dd74123c20d" />
 </p>
+<br>
 
 **Caveat**
 
 The ocean is a complex system that involves several interrelated variables that may have non-linear relationships that were not further investigated and would require deeper knowledge of ocean dynamics.
 
 The linear model coefficients should not be interpreted as causal. 
+<br>
 
 **Execution**
 

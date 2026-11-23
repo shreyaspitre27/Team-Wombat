@@ -519,10 +519,10 @@ On the best-performing fold (Fold 4), we draw 200 Monte Carlo error samples acro
 | <img width="2048" height="555" alt="m3-3" src="https://github.com/user-attachments/assets/a00990c7-0551-494a-a695-caa979cc5a59" /> |
 | <img width="2048" height="544" alt="m3-4" src="https://github.com/user-attachments/assets/d46530d1-a26a-4670-ba74-ddcd13dbd008" /> |
 | <img width="2048" height="548" alt="m3-5" src="https://github.com/user-attachments/assets/84a36259-cd9a-47df-9c81-a805693d8e51" /> |
-| <img width="650" alt="m3-6" src="https://github.com/user-attachments/assets/c07fc526-bc86-4053-bae5-4b19d8adcd78" /> |
+| <img width="2048" height="536" alt="m3-6" src="https://github.com/user-attachments/assets/c07fc526-bc86-4053-bae5-4b19d8adcd78" /> |
 
 <p align = "center">
-<img width="2026" height="1174" alt="m3-7" src="https://github.com/user-attachments/assets/9b509425-a1bb-4e50-aa89-8dd74123c20d" />
+<img width="512" alt="m3-7" src="https://github.com/user-attachments/assets/9b509425-a1bb-4e50-aa89-8dd74123c20d" />
 </p>
 
 **Execution**

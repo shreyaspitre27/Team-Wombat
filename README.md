@@ -472,6 +472,25 @@ On the best-performing fold (Fold 4), we draw 200 Monte Carlo error samples acro
 
 **Results of the Linear Model**
 
+| <sub>Fold</sub> | <sub>Horizon_Days</sub> | <sub>Linear_MAE_km</sub> | <sub>Persistence_MAE_km</sub> | <sub>Skill_vs_Persistence_%</sub> |
+| :---: | :---: | :---: | :---: | :---: |
+| <sub>1</sub> | <sub>3.0</sub> | <sub>39.51</sub> | <sub>51.77</sub> | <sub>+23.7%</sub> |
+| <sub>1</sub> | <sub>10.0</sub> | <sub>116.45</sub> | <sub>132.85</sub> | <sub>+12.3%</sub> |
+| <sub>1</sub> | <sub>15.0</sub> | <sub>157.52</sub> | <sub>176.75</sub> | <sub>+10.9%</sub> |
+| <sub>2</sub> | <sub>3.0</sub> | <sub>37.71</sub> | <sub>49.48</sub> | <sub>+23.8%</sub> |
+| <sub>2</sub> | <sub>10.0</sub> | <sub>112.08</sub> | <sub>127.53</sub> | <sub>+12.1%</sub> |
+| <sub>2</sub> | <sub>15.0</sub> | <sub>151.98</sub> | <sub>169.94</sub> | <sub>+10.6%</sub> |
+| <sub>3</sub> | <sub>3.0</sub> | <sub>37.82</sub> | <sub>49.73</sub> | <sub>+23.9%</sub> |
+| <sub>3</sub> | <sub>10.0</sub> | <sub>112.33</sub> | <sub>128.49</sub> | <sub>+12.6%</sub> |
+| <sub>3</sub> | <sub>15.0</sub> | <sub>152.79</sub> | <sub>171.73</sub> | <sub>+11.0%</sub> |
+| <sub>4</sub> | <sub>3.0</sub> | <sub>37.99</sub> | <sub>50.25</sub> | <sub>+24.4%</sub> |
+| <sub>4</sub> | <sub>10.0</sub> | <sub>112.67</sub> | <sub>130.14</sub> | <sub>+13.4%</sub> |
+| <sub>4</sub> | <sub>15.0</sub> | <sub>153.02</sub> | <sub>174.15</sub> | <sub>+12.1%</sub> |
+| <sub>5</sub> | <sub>3.0</sub> | <sub>38.78</sub> | <sub>51.11</sub> | <sub>+24.1%</sub> |
+| <sub>5</sub> | <sub>10.0</sub> | <sub>115.15</sub> | <sub>132.13</sub> | <sub>+12.8%</sub> |
+| <sub>5</sub> | <sub>15.0</sub> | <sub>156.67</sub> | <sub>176.69</sub> | <sub>+11.3%</sub> |
+<br>
+
 | | <sub>Horizon_Days</sub> | <sub>Markov_MAE_km</sub> | <sub>Persistence_MAE_km</sub> | <sub>Skill_vs_Persistence_%</sub> |
 | :---: | :---: | :---: | :---: | :---: |
 | <sub>1</sub> | <sub>3.0</sub> | <sub>38.3632</sub> | <sub>50.4702</sub> | <sub>+23.989%</sub> |

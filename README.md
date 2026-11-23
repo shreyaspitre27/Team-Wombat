@@ -472,6 +472,18 @@ On the best-performing fold (Fold 4), we draw 200 Monte Carlo error samples acro
 
 **Results of the Linear Model**
 
+### 10-Day (240-Hour) Model Fit Across 5 Folds
+
+| Fold | Training Windows | Training $R^2$ (East) | Training $R^2$ (North) | Error Std. Dev. East (km) | Error Std. Dev. North (km) | Error Correlation (East/North) |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| <sub>1</sub> | <sub>4,795,363</sub> | <sub>0.318</sub> | <sub>0.124</sub> | <sub>109.127</sub> | <sub>89.735</sub> | <sub>0.117</sub> |
+| <sub>2</sub> | <sub>4,636,383</sub> | <sub>0.321</sub> | <sub>0.124</sub> | <sub>110.448</sub> | <sub>90.642</sub> | <sub>0.121</sub> |
+| <sub>3</sub> | <sub> 4,716,062</sub> | <sub>0.317</sub> | <sub>0.122</sub> | <sub>109.851</sub> | <sub>90.404</sub> | <sub>0.114</sub> |
+| <sub>4</sub> | <sub> 4,666,248</sub> | <sub>0.316</sub> | <sub>0.123</sub> | <sub>110.004</sub> | <sub>90.493</sub> | <sub>0.118</sub> |
+| <sub>5</sub> | <sub> 4,713,684</sub> | <sub>0.318</sub> | <sub>0.122</sub> | <sub>109.481</sub> | <sub>89.860</sub> | <sub>0.117</sub> |
+| <sub>**Mean**</sub> | <sub>**4,705,548**</sub> | <sub>**0.318**</sub> | <sub>**0.123**</sub> | <sub>**109.782**</sub> | <sub>**90.227**</sub> | <sub>**0.117**</sub> |
+<br>
+
 | <sub>Fold</sub> | <sub>Horizon_Days</sub> | <sub>Linear_MAE_km</sub> | <sub>Persistence_MAE_km</sub> | <sub>Skill_vs_Persistence_%</sub> |
 | :---: | :---: | :---: | :---: | :---: |
 | <sub>1</sub> | <sub>3.0</sub> | <sub>39.51</sub> | <sub>51.77</sub> | <sub>+23.7%</sub> |

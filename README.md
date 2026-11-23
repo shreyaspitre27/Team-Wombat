@@ -323,8 +323,6 @@ Across all 5 cross-validation folds (over 1 million unseen test pairs per fold),
 | <sub>5</sub> | <sub>10.0</sub> | <sub>125.17</sub> | <sub>132.28</sub> | <sub>+5.4%</sub> |
 | <sub>5</sub> | <sub>15.0</sub> | <sub>165.61</sub> | <sub>176.85</sub> | <sub>+6.4%</sub> |
 <br>
-<br>
-<br>
 
 **Aggregating across all folds:**
 

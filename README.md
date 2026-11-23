@@ -551,9 +551,11 @@ Despite prior research indicating that seasonality influences the movement of dr
 
 **Model 3 vs Markov Models**
 
-Model 3 achieved lower MAE and higher skill at 3 days than Model 1 because its 6-hour lagged displacements capture short-term momentum. However, an important thing to note is that, its skill steadily declined as horizon increased. It was hypothesised that this was observed as initial momentum faded and plain global linear regressions could not capture the bends around individual curved basin currents. Consequently, Model 1’s skill rose as local transitions accumulated and captured long-term variations.<br>
-<br>
-The time series lag in Model 3 gave it more information to work with when predicting drifter movement, however Model 1 and 2 were memoryless, meaning comparing the linear model as a baseline to our final products was not valid. Model 3 is therefore best treated as a short-horizon standalone model rather than a direct baseline the way we had intended it to be, leaving persistence to be our common benchmark.
+Model 3 achieved lower MAE and higher skill at 3 days than Model 1 because its 6-hour lagged displacements capture short-term momentum. However, an important thing to note is that, its skill steadily declined as horizon increased. It was hypothesised that this was observed as initial momentum faded and plain global linear regressions could not capture the bends around individual curved basin currents. Consequently, Model 1’s skill rose as local transitions accumulated and captured long-term variations.
+
+The 6-hour lag in Model 3 gave it more information to work with when predicting drifter movement, however Model 1 and 2 were memoryless, meaning comparing the linear model as a baseline to our final products was not valid. 
+Also, when calculating the linear model metrics, we evaluate error using exact test cell coordinates, while Markov models use grid cell centres for metric computation, making direct comparison of error metrics difficult.
+Model 3 is therefore best treated as a short-horizon standalone model rather than a direct baseline the way we had intended it to be, leaving persistence to be our common benchmark.
 
 ## 10. Conclusion
 

@@ -354,6 +354,7 @@ As Fold 4 achieved the highest validation skill across all splits (+2.2% at 3 da
 </p>
 
 It is observed that the skill score climbs steadily across horizons to +8.93% at 30 days. Over short horizons, local fluid inertia kept persistence competitive, but over longer horizons, inertia broke down and the Markov chain gained an advantage over persistence.
+<br>
 
 **Probabilistic Energy Score**  - Shows why dispersion clouds beat single-point predictions
 

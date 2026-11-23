@@ -469,7 +469,7 @@ On the best-performing fold (Fold 4), we draw 200 Monte Carlo error samples acro
 **Results and Interpretation**
 
 
-| Fold | Training Windows | Training $R^2$ (East) | Training $R^2$ (North) | Error Std. Dev. East (km) | Error Std. Dev. North (km) | Error Correlation (East/North) |
+| <sub>Fold</sub> | <sub>Training Windows</sub> | <sub>Training $R^2$ (East)</sub> | <sub>Training $R^2$ (North)</sub> | <sub>Error Std. Dev. East (km)</sub> | <sub>Error Std. Dev. North (km)</sub> | <sub>Error Correlation (East/North)</sub> |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | <sub>1</sub> | <sub>4,795,363</sub> | <sub>0.318</sub> | <sub>0.124</sub> | <sub>109.127</sub> | <sub>89.735</sub> | <sub>0.117</sub> |
 | <sub>2</sub> | <sub>4,636,383</sub> | <sub>0.321</sub> | <sub>0.124</sub> | <sub>110.448</sub> | <sub>90.642</sub> | <sub>0.121</sub> |

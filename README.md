@@ -529,15 +529,21 @@ As for Model 3, it was found that lagged displacements can include useful inform
 1. Since data about the ocean will be collected from drifters, not all cells are guaranteed to have drifter data, especially after filtering for incomplete data. It may be substituted with other data, such as meteorological data, but finding a proper format and combining it with the drifter data may be technically challenging.
 2. Due to computation limitations, the six hourly dataset was used instead of a higher frequency. This study relies on this aggregated dataset to be a good approximation of ocean conditions at the measured time.
    <ol type="a">
-     <li>Computation heavy when increasing the number of days to forecast / predict. A 3 hour wait time was experienced when running the models 1 and 2.</li>
+     <li>Computation heavy when increasing the number of days to forecast / predict.</li>
    </ol>
-3. A key assumption of this project and its usefulness is that drifters are a good proxy for plastic waste. Whilst drifters have been used as a proxy for plastic waste in previous studies, they establish that not all plastic waste behaves the same and that drogued and undrogued drifters are more useful for modelling different types of plastics (England et al., 2012).
-4. Given the time constraint that the team had, we had to sacrifice other viable methods because it was too complex. This is to ensure that there is progress throughout the term and the team is on track with the timeline.
-5. The team had limited domain expertise with regards to oceanography. A bulk of our time was used researching past research and getting to know what can be done with the team’s research.
+   <ol type="b">
+     <li>A 1-hour execution time for model 1 and 3-hours for model 2.</li>
+   </ol>
+3. This study relies on this aggregated dataset to be a good approximation of ocean conditions at the measured time.
+4. A key assumption of this project is that drifters are a good proxy for plastic waste. Whilst drifters have been used as a proxy for plastic waste in prior research, they establish that not all plastic waste behaves the same. Nevertheless, they mention that drouged and undrouged drifters are useful for modelling different types of plastics (England et al, 2012).
+5. Given the time constraint that the team had, we could not implement lag-based Markov matrix evaluation as it was too complex, given our current understanding.
+6. The team had limited domain expertise with regards to oceanography. A bulk of our time was used researching past studies and figuring out further steps in our analysis.
+
 
 ## 12. Future Work
-1. Potentially dive into deeper research with our current seasonality model. Given the known fact that seasons do affect ocean behaviour, with enough time, we could potentially implement a seasonality model better. 
-2. Investigating in implementing a lag factor for the markov chain models. Since the linear models do not make a fair comparison with the markov chain model. 
+1. **Conduct research on proper implementation of seasonality:** Given that seasons affect ocean behavior, with enough time, we could refine our implementation of Model 2 to model seasonal behaviour more effectively.
+2. **Investigate implementing a lag factor for the Markov chain models:** This would allow a fair comparison between the linear model and the Markov chain models, as well as potentially improving Markov chain model performance.
+
 
 ## 13. AI Usage Statement & Reflection
 

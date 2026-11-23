@@ -472,6 +472,7 @@ On the best-performing fold (Fold 4), we draw 200 Monte Carlo error samples acro
 
 **Results and Interpretation**
 
+**Model Fit & Error Analysis**
 
 | <sub>Fold</sub> | <sub>Training Windows</sub> | <sub>Training $R^2$ (East)</sub> | <sub>Training $R^2$ (North)</sub> | <sub>Error Std. Dev. East (km)</sub> | <sub>Error Std. Dev. North (km)</sub> | <sub>Error Correlation (East/North)</sub> |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -482,6 +483,15 @@ On the best-performing fold (Fold 4), we draw 200 Monte Carlo error samples acro
 | <sub>5</sub> | <sub> 4,713,684</sub> | <sub>0.318</sub> | <sub>0.122</sub> | <sub>109.481</sub> | <sub>89.860</sub> | <sub>0.117</sub> |
 | <sub>**Mean**</sub> | <sub>**4,705,548**</sub> | <sub>**0.318**</sub> | <sub>**0.123**</sub> | <sub>**109.782**</sub> | <sub>**90.227**</sub> | <sub>**0.117**</sub> |
 <br>
+
+Across all the 5 folds, both the Training $R^2$ and the standard deviation of their errors were remarkably stable, showing minimal fold-to-fold variance. This consistency indicated that the regression genuinely captured basin-wide flow dynamics rather than overfitting to specific training drifter trajectories.
+
+There was a substantially high variance in west-east displacement (mean $R^2 = 0.318$) compared to south-north displacement (mean $R^2 = 0.123$). 
+These results could be due to major Atlantic currents such as Gulf Stream and North Equatorial Current having a significant zonal flow along latitude bounds, whereas meridional movements are governed more by chaotic eddies.
+
+There was also the east/north correlation being 0.117, which indicated that the dispersion cloud is slightly northeastward tilted, consistent with the dominant diagonal trajectory of the Gulf Stream.
+
+**5-Fold Cross-Validation Summary**
 
 | <sub>Fold</sub> | <sub>Horizon_Days</sub> | <sub>Linear_MAE_km</sub> | <sub>Persistence_MAE_km</sub> | <sub>Skill_vs_Persistence_%</sub> |
 | :---: | :---: | :---: | :---: | :---: |
@@ -502,22 +512,51 @@ On the best-performing fold (Fold 4), we draw 200 Monte Carlo error samples acro
 | <sub>5</sub> | <sub>15.0</sub> | <sub>156.67</sub> | <sub>176.69</sub> | <sub>+11.3%</sub> |
 <br>
 
+Model 3 outperforms the persistence baseline across every forecast horizon. 
+The results are also consistent across all folds, with the variance of skill scores being minimal, which again confirms generalisation without overfitting.
+
+Fold 4 achieves the highest skill on all horizons and is therefore used in further analysis.
+
+Aggregating across all folds, we get:
+
 | | <sub>Horizon_Days</sub> | <sub>Linear_MAE_km</sub> | <sub>Persistence_MAE_km</sub> | <sub>Skill_vs_Persistence_%</sub> |
 | :---: | :---: | :---: | :---: | :---: |
 | <sub>1</sub> | <sub>3.0</sub> | <sub>38.3632</sub> | <sub>50.4702</sub> | <sub>+23.989%</sub> |
 | <sub>2</sub> | <sub>10.0</sub> | <sub>113.7357</sub> | <sub>130.2284</sub> | <sub>+12.662%</sub> |
 | <sub>3</sub> | <sub>15.0</sub> | <sub>154.3948</sub> | <sub>173.8517</sub> | <sub>+11.188%</sub> |
 
+An important point to note is that Model 3’s skill decreases monotonically over an increasing time horizon. 
+This might be because over short horizons, the 6-hour lagged displacement terms directly capture local velocity (as it is the 6-hourly displacement, it is a measure of velocity). 
+
+However, over a multi-week horizon, the initial momentum captured using a single global linear bivariate regression is not able to capture the curves and eddies of the basin anymore.
+
+**Extended Horizon Profiling**
+
+Model 3 starts off with a high skill score but it steadily decreases as the time horizon increases as demonstrated by the plot below.
 
 <p align = "center">
 <img width="2048" height="760" alt="m3-1" src="https://github.com/user-attachments/assets/a39525e5-f2c5-491f-8499-0747945c70d4" />
 </p>
+
+**Probabilistic Energy Score**
+
+We observe that Model 3 achieves strong probabilistic skills across all horizons, going as high as +42.79% at the 3-day horizon. 
+However, consistent with point forecast evaluation, we observe that the skill score decreases as the time horizon increases. 
+
+The intercept-only model seems surprisingly useful, having better skill than persistence, showing that predicting the average displacement gives quite a good prediction.
+
 
 | <sub>Fold</sub> | <sub>Forecast_Days</sub> | <sub>Mean_ES_Model</sub> | <sub>Mean_ES_Intercept</sub> | <sub>Mean_ES_Persistence</sub> | <sub>Skill_vs_Persistence_Model%</sub> | <sub>Skill_vs_Persistence_Intercept%</sub> |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | <sub>4</sub> | <sub>3.0</sub> | <sub>28.6999</sub> | <sub>37.4117</sub> | <sub>50.1677</sub> | <sub>+42.792%</sub> | <sub>+25.427%</sub> |
 | <sub>4</sub> | <sub>10.0</sub> | <sub>83.4928</sub> | <sub>95.7697</sub> | <sub>130.2248</sub> | <sub>+35.886%</sub> | <sub>+26.458%</sub> |
 | <sub>4</sub> | <sub>15.0</sub> | <sub>111.9330</sub> | <sub>127.0154</sub> | <sub>173.4265</sub> | <sub>+35.459%</sub> | <sub>+26.083%</sub> |
+
+**Spatial Case Studies**
+
+Finally, we visualized real ocean dispersions in high impact marine zones.
+
+As the forecast horizon increases from 3 to 15 days, the simulated elliptical cloud expands widely and becomes increasingly sparse and speckled, as the 1,000 Monte Carlo particles spread thin across a much larger area, lowering individual cell probability density and signalling growing spatial uncertainty.
 
 | |
 | :---: |
@@ -527,9 +566,21 @@ On the best-performing fold (Fold 4), we draw 200 Monte Carlo error samples acro
 | <img width="2048" height="548" alt="m3-5" src="https://github.com/user-attachments/assets/84a36259-cd9a-47df-9c81-a805693d8e51" /> |
 | <img width="2048" height="536" alt="m3-6" src="https://github.com/user-attachments/assets/c07fc526-bc86-4053-bae5-4b19d8adcd78" /> |
 
+**Multi-Horizon Forecast Error Curve (6 Hours to 90 Days)**
+
+Across all 16 forecast horizons from 6 hours (0.25 days) to 90 days, the linear regression model consistently achieves lower mean final distance error than the persistence baseline, with the gap widening steadily as horizon increases. 
+
+There is a narrow shaded error band of $\pm 1$ standard deviation across the 5 folds, showing that error growth is stable and consistent across unseen drifter splits across the time horizon
+
 <p align = "center">
 <img width="512" alt="m3-7" src="https://github.com/user-attachments/assets/9b509425-a1bb-4e50-aa89-8dd74123c20d" />
 </p>
+
+**Caveat**
+
+The ocean is a complex system that involves several interrelated variables that may have non-linear relationships that were not further investigated and would require deeper knowledge of ocean dynamics.
+
+The linear model coefficients should not be interpreted as causal. 
 
 **Execution**
 

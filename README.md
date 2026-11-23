@@ -418,6 +418,7 @@ After executing the model, we got the following aggregated results across all 5 
 
 Model 2 underperforms the persistence baseline at the 3 day horizon, yielding negative skill value for this horizon over all folds. 
 The graph on the right shows skill score for the 3 day horizon for Fold 4 dipping below the red dotted 0 line. 
+<br>
 
 **Probabilistic Energy Score**
 

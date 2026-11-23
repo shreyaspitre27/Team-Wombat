@@ -544,7 +544,7 @@ However, consistent with point forecast evaluation, we observe that the skill sc
 The intercept-only model seems surprisingly useful, having better skill than persistence, showing that predicting the average displacement gives quite a good prediction.
 
 
-| <sub>Fold</sub> | <sub>Forecast_Days</sub> | <sub>Mean_ES_Model</sub> | <sub>Mean_ES_<br>Intercept</sub> | <sub>Mean_ES_<br>Persistence</sub> | <sub>Skill_vs_<br>Persistence_Model%</sub> | <sub>Skill_vs_<br>Persistence_Intercept%</sub> |
+| <sub>Fold</sub> | <sub>Forecast_Days</sub> | <sub>Mean_ES_<br>Model</sub> | <sub>Mean_ES_<br>Intercept</sub> | <sub>Mean_ES_<br>Persistence</sub> | <sub>Skill_vs_<br>Persistence_Model%</sub> | <sub>Skill_vs_<br>Persistence_Intercept%</sub> |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | <sub>4</sub> | <sub>3.0</sub> | <sub>28.6999</sub> | <sub>37.4117</sub> | <sub>50.1677</sub> | <sub>+42.792%</sub> | <sub>+25.427%</sub> |
 | <sub>4</sub> | <sub>10.0</sub> | <sub>83.4928</sub> | <sub>95.7697</sub> | <sub>130.2248</sub> | <sub>+35.886%</sub> | <sub>+26.458%</sub> |

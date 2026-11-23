@@ -513,7 +513,7 @@ On the best-performing fold (Fold 4), we draw 200 Monte Carlo error samples acro
 <img width="2048" height="760" alt="m3-1" src="https://github.com/user-attachments/assets/a39525e5-f2c5-491f-8499-0747945c70d4" />
 </p>
 
-| <sub>Fold</sub> | <sub>Forecast_Days</sub> | <sub>Mean_Energy_Score_Model</sub> | <sub>Mean_Energy_Score_Intercept</sub> | <sub>Mean_Energy_Score_Persistence</sub> | <sub>Skill_vs_Persistence_Model%</sub> | <sub>Skill_vs_Persistence_Intercept%</sub> |
+| <sub>Fold</sub> | <sub>Forecast_Days</sub> | <sub>Mean_ES_Model</sub> | <sub>Mean_ES_Intercept</sub> | <sub>Mean_ES_Persistence</sub> | <sub>Skill_vs_Persistence_Model%</sub> | <sub>Skill_vs_Persistence_Intercept%</sub> |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | <sub>4</sub> | <sub>3.0</sub> | <sub>28.6999</sub> | <sub>37.4117</sub> | <sub>50.1677</sub> | <sub>+42.792%</sub> | <sub>+25.427%</sub> |
 | <sub>4</sub> | <sub>10.0</sub> | <sub>83.4928</sub> | <sub>95.7697</sub> | <sub>130.2248</sub> | <sub>+35.886%</sub> | <sub>+26.458%</sub> |

@@ -470,9 +470,6 @@ On the best-performing fold (Fold 4), we draw 200 Monte Carlo error samples acro
 
 **Results and Interpretation**
 
-**Results of the Linear Model**
-
-### 10-Day (240-Hour) Model Fit Across 5 Folds
 
 | Fold | Training Windows | Training $R^2$ (East) | Training $R^2$ (North) | Error Std. Dev. East (km) | Error Std. Dev. North (km) | Error Correlation (East/North) |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |

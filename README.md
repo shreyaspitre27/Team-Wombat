@@ -426,9 +426,9 @@ Applying the same probabilistic evaluation metric as in Model 1, we obtain the f
 
 | <sub>Fold</sub> | <sub>Forecast_Days</sub> | <sub>Mean_Energy_Score_Model</sub> | <sub>Mean_Energy_Score_Persistence</sub> | <sub>Skill_vs_Persistence_%</sub> |
 | :---: | :---: | :---: | :---: | :---: |
-| <sub>4</sub> | <sub>3.0</sub> | <sub>31.8626</sub> | <sub>37.5358</sub> | <sub>+15.1141%</sub> |
-| <sub>4</sub> | <sub>10.0</sub> | <sub>85.2229</sub> | <sub>111.7391</sub> | <sub>+23.7304%</sub> |
-| <sub>4</sub> | <sub>15.0</sub> | <sub>108.4731</sub> | <sub>143.7212</sub> | <sub>+24.5253%</sub> |
+| <sub>4</sub> | <sub>3.0</sub> | <sub>31.8626</sub> | <sub>37.5358</sub> | <sub>+15.114%</sub> |
+| <sub>4</sub> | <sub>10.0</sub> | <sub>85.2229</sub> | <sub>111.7391</sub> | <sub>+23.730%</sub> |
+| <sub>4</sub> | <sub>15.0</sub> | <sub>108.4731</sub> | <sub>143.7212</sub> | <sub>+24.525%</sub> |
 
 The results show that capturing seasonal dynamics indeed improves ensemble spread over our stationary baseline.
 

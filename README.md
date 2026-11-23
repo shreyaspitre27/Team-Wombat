@@ -380,15 +380,42 @@ To execute the model, open `Model_1.ipnyb` from the repository and run all cells
 
 ## Model 2 (`Model_2.ipynb`)
 
+### Seasonal Markov Chain 
+
+In the second model, we followed the implementation of model 1, the only difference being that we split our cleaned dataset into four meteorological quarters to account for seasonality. 
+
+**How the model works**
+
+  - **Four separate seasonal transition matrices:** The dataset `df` was split into four quarters (`df_q1` for Mar-May, `df_q2` for Jun-Aug, `df_q3` for Sep-Nov, and `df_q4` for Dec-Feb), and separate 210,000210,000 sparse transition matrix Pq were constructed for each season q.<br>
+  - **5-fold cross-validation split by drifter:** A 5-fold cross validation with 80%/20% split per fold was shared across all four seasons, ensuring a drifter never appears in training for one season and testing for another. <br>
+  - **Strict seasonal and fold isolation:** Within each fold, `P_q` was estimated solely from consecutive 6-hourly fixes of that fold's training drifters occurring inside season *q*. <br>
+  - **Same evaluation metrics as Model 1:** Haversian MAE of the most-likely cell (`top1`) vs. a persistence baseline and skill score at 3, 10, and 15 days (all 5 folds) and 14 and 30 days (Fold 4 only), along with Energy Score using 500 Monte Carlo particles at 3, 10, and 15 days (Fold 4) were used.<br>
+  - **Intra-season window filtering and coverage:** Candidate test windows were constructed per season so that the **entire forecast window lies within a single season** (excluding cross-season transitions). A window was then scored only if its start cell was visited in that season's training data, with `Coverage_%` reporting the percentage of intra-season test windows that met this condition.<br>
+
+### Results and Interpretation 
+
+**5-Fold Cross-Validation Summary**
+
+After executing the model, we got the following aggregated results across all 5 folds:
+
 | | <sub>Horizon_Days</sub> | <sub>Markov_MAE_km</sub> | <sub>Persistence_MAE_km</sub> | <sub>Skill_vs_Persistence_%</sub> | <sub>Coverage_%</sub> |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | <sub>1</sub> | <sub>3.0</sub> | <sub>52.4435</sub> | <sub>51.0639</sub> | <sub>-2.709%</sub> | <sub>92.597%</sub> |
 | <sub>2</sub> | <sub>10.0</sub> | <sub>127.9616</sub> | <sub>131.0672</sub> | <sub>+2.363%</sub> | <sub>92.758%</sub> |
 | <sub>3</sub> | <sub>15.0</sub> | <sub>168.0600</sub> | <sub>174.4514</sub> | <sub>+3.659%</sub> | <sub>92.845%</sub> |
 
+**Extended Horizon Profiling**
+
 <p align = "center">
 <img width="1389" height="515" alt="m2-1" src="https://github.com/user-attachments/assets/e7e920e1-b8e1-47f4-ac9f-fb52249545f4" />
 </p>
+
+Model 2 underperforms the persistence baseline at the 3 day horizon, yielding negative skill value for this horizon over all folds. 
+The graph on the right shows skill score for the 3 day horizon for Fold 4 dipping below the red dotted 0 line. 
+
+**Probabilistic Energy Score**
+
+Applying the same probabilistic evaluation metric as in Model 1, we obtain the following:
 
 | <sub>Fold</sub> | <sub>Forecast_Days</sub> | <sub>Mean_Energy_Score_Model</sub> | <sub>Mean_Energy_Score_Persistence</sub> | <sub>Skill_vs_Persistence_%</sub> |
 | :---: | :---: | :---: | :---: | :---: |
@@ -396,6 +423,11 @@ To execute the model, open `Model_1.ipnyb` from the repository and run all cells
 | <sub>4</sub> | <sub>10.0</sub> | <sub>85.2229</sub> | <sub>111.7391</sub> | <sub>+23.7304%</sub> |
 | <sub>4</sub> | <sub>15.0</sub> | <sub>108.4731</sub> | <sub>143.7212</sub> | <sub>+24.5253%</sub> |
 
+The results show that capturing seasonal dynamics indeed improves ensemble spread over our stationary baseline.
+
+**Spatial Case Studies**
+
+Finally, we generated a seasonal marine debris dispersion forecast using fold 4 seasonal matrices from a single origin cell at 28°N, 55°W and got the following results:
 
 | |
 | :---: |
@@ -403,6 +435,8 @@ To execute the model, open `Model_1.ipnyb` from the repository and run all cells
 | <img width="1550" height="637" alt="m2-3" src="https://github.com/user-attachments/assets/4d9cdd4e-9615-450f-87f0-b8c8c56ae6c9" /> |
 | <img width="1554" height="637" alt="m2-4" src="https://github.com/user-attachments/assets/f4c68279-c88c-48b9-846f-c4e273bc7e7c" /> |
 | <img width="1550" height="637" alt="m2-5" src="https://github.com/user-attachments/assets/7b852e93-dd02-4a5c-bacc-bdfbb2663633" /> |
+
+In Fold 4, no actual held-out drifter endpoints are captured in Q2, while Q1, Q3, and Q4 record only 1, 3, and 2 actual endpoints respectively. This highlights a key trade-off of Model 2: partitioning the dataset into four seasons reduces observation density within each quarter and excludes trajectories that cross seasonal boundaries, resulting in fewer observed validation endpoints in the dispersion plots.
 
 ## Model 3 (`Model_3.ipynb`)
 
@@ -427,6 +461,10 @@ To execute the model, open `Model_1.ipnyb` from the repository and run all cells
 <p align = "center">
 <img width="2026" height="1174" alt="m3-7" src="https://github.com/user-attachments/assets/9b509425-a1bb-4e50-aa89-8dd74123c20d" />
 </p>
+
+**Execution**
+
+To execute the model, open `Model_2.ipnyb` from the repository and run all cells sequentially. It automatically installs the required dependencies, loads the 6-hourly drifter dataset and reproduces all the above results and dispersion plots.
 
 ## 9. Discussion of Results
 
